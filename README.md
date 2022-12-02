@@ -1,9 +1,4 @@
-Adam Johnston<br/>
- - Lead Software Engineer
- - Personal GitHub Prototyping Account
- - GitHub: <https://github.com/atmostadam>
- - LinkedIn: <https://www.linkedin.com/in/adamrjohnston>
- - Email: atmostadam@gmail.com
+
 
 API Library Showccase<br/>
 <https://github.com/atmostadam/cats-api>
@@ -126,4 +121,11 @@ Currently Prototyping
 
 I try to spend at least a few hours a week trying to keep up my technical skillset via prototyping.
 
-Contact Information: @atmostadam or open an issue on atmostadam/contact.
+Contact Information:
+
+ - Adam Johnston
+ - Lead Software Engineer
+ - Personal GitHub Prototyping Account
+ - GitHub: <https://github.com/atmostadam>
+ - LinkedIn: <https://www.linkedin.com/in/adamrjohnston>
+ - Email: atmostadam@gmail.com
