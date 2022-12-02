@@ -1,3 +1,7 @@
+
+https://atmostadam.github.io/cats
+https://github.io/atmostadam/cats
+
 Adam's Personal GitHub Prototyping Account
 
 Use professionally on a daily basis:
