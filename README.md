@@ -112,7 +112,7 @@ Workflow Engine
  - Red Hat JBPM
 
 Currently Prototyping
- - New Features for JBPM & Drools
+ - Event-Based
  - Kogito
  - Camunda
  - Activiti
