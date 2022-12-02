@@ -1,6 +1,7 @@
 
-https://atmostadam.github.io/cats
-https://github.io/atmostadam/cats
+https://atmostadam.github.com/cats
+
+https://github.com/atmostadam/cats
 
 Adam's Personal GitHub Prototyping Account
 
