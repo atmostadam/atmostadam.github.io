@@ -1,9 +1,9 @@
 ### Adam Johnston
-### Lead Software Engineer
-### Personal GitHub Prototyping Account
-### GitHub: <https://github.com/atmostadam>
-### LinkedIn: <https://www.linkedin.com/in/adamrjohnston>
-### Email: atmostadam@gmail.com
+#### Lead Software Engineer
+#### Personal GitHub Prototyping Account
+#### GitHub: <https://github.com/atmostadam>
+#### LinkedIn: <https://www.linkedin.com/in/adamrjohnston>
+#### Email: atmostadam@gmail.com
 
 API Library Showccase<br/>
 <https://github.com/atmostadam/cats-api>
