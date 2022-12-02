@@ -44,6 +44,8 @@ Database
  - MySQL
  - Postgres
  - H2
+ - AS400
+ - SQL Server
 
 Development Methodology
  - Iterative
@@ -52,6 +54,56 @@ Development Methodology
  - Waterfall
  - DevOps
  - Extreme Programming
+ 
+Java
+ - Spring Boot
+ - Standalone Tomcat
+ - JBoss EAP
+ - JPA - Java persistence API
+ - Core Java
+ - Java 1.2
+ - Java 1.5
+ - Java 1.8
+ - Java 11
+ - Java 17
+ 
+Operating Systems
+ - Windows
+ - Windows Server
+ - Linux
+ - Ubuntu
+ - CentOS
+ - Korn Shell Scripting
+ - Bash Shell Scripting
+ - PowerShell Scripting
+ - Solaris 8
+ - Solaris 10
+ 
+Rules Engine Development
+ - MF
+ - JMF
+ - Drools Rules
+ 
+ Security
+ - Veracode
+ - Sonarqube
+ - Sonarlint
+ - PrismaCloud
+ 
+Sotware Development Leadership
+ - Code Reviews
+ - Software Development Leadership
+ - Interview Developers
+ - Onboard Developers
+ - Architectural Direction Participation
+ - Software Design Approver
+ - Software Design
+ - Final Pull Request Approval Before Production
+
+Workflow Engine
+ - Sigma Service Broker
+ - Sigma SMP
+ - Red Hat JBPM
 
 Currently Prototyping
  - New Features for JBPM & Drools
