@@ -1,8 +1,15 @@
-# Adam Johnston's Personal GitHub Prototyping Account
+## Adam Johnston
+## Lead Software Engineer
+## Personal GitHub Prototyping Account
+## GitHub: <https://github.com/atmostadam>
+## LinkedIn: <https://www.linkedin.com/in/adamrjohnston>
+## Email: atmostadam@gmail.com
 
-## <https://github.com/atmostadam/cats-api> - API Library Showccase
+### API Library Showccase<br/>
+### <https://github.com/atmostadam/cats-api>
 
-## <https://github.com/atmostadam/cats-test> - Test Library Showccase
+### Test Library Showccase<br/>
+### <https://github.com/atmostadam/cats-test>
 
 Use professionally on a daily basis:
  - Java
