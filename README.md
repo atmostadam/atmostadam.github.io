@@ -1,9 +1,8 @@
+# Adam Johnston's Personal GitHub Prototyping Account
 
-https://atmostadam.github.com/cats
+## <https://github.com/atmostadam/cats-api> - API Library Showccase
 
-https://github.com/atmostadam/cats
-
-Adam's Personal GitHub Prototyping Account
+## <https://github.com/atmostadam/cats-test> - Test Library Showccase
 
 Use professionally on a daily basis:
  - Java
