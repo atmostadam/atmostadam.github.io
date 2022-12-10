@@ -1,12 +1,15 @@
 
 
-API Library Showccase<br/>
+API Prototype and Demo Showcase<br/>
 <https://github.com/atmostadam/cats-api>
 
-Test Library Showccase<br/>
+Test Prototype and Demo Showcase<br/>
 <https://github.com/atmostadam/cats-test>
 
-Use professionally on a daily basis:
+Spring Boot Application Prototype and Demo Showcase<br/>
+<https://github.com/atmostadam/cats-test>
+
+I use the following professionally on a daily basis:
  - Java
  - Spring Boot
  - JBPM
@@ -19,11 +22,16 @@ Use professionally on a daily basis:
  - Swagger
  - RESTful Services
  - IBM AS400
+ - Veracode
+ - Sonarqube
+ - PrismaCloud
  - Intellij (Primary), VS Code BPMN Plugin Kogito, Eclipse BPMN Plugin JBPM/Drools
 
-Use professionally in maintenance mode
+I also use these professionally in maintenance mode
  - Standalone Tomcat (war deployment)
  - Standalone and Clustered JBoss EAP (ear deployment)
+ - SOAP Web Services
+ - XML Over Socket
  - HornetQ
 
 Cloud, CI/CD & Infrastructure
@@ -96,14 +104,14 @@ Rules Engine Development
  - Sonarlint
  - PrismaCloud
  
-Sotware Development Leadership
+Software Professional & Leadership
  - Code Reviews
  - Software Development Leadership
  - Interview Developers
  - Onboard Developers
  - Architectural Direction Participation
  - Software Design Approver
- - Software Design
+ - Software Design Leadership
  - Final Pull Request Approval Before Production
 
 Workflow Engine
@@ -117,7 +125,6 @@ Currently Prototyping
  - Camunda
  - Activiti
  - Coming Soon - IBM's Process and Rules Engines
-
 
 I try to spend at least a few hours a week trying to keep up my technical skillset via prototyping.
 
