@@ -2,10 +2,10 @@ theme: jekyll-theme-minimal
 title: Adam Johnston
 description: >
   API Showcase<br/>
-  <https://github.com/atmostadam/cats-api>
+  https://github.com/atmostadam/cats-api
 
   Framework Showcase<br/>
-  <https://github.com/atmostadam/cats-test>
+  https://github.com/atmostadam/cats-test
 
   Spring Boot Application Showcase<br/>
-  <https://github.com/atmostadam/cats-spring-boot>
+  https://github.com/atmostadam/cats-spring-boot
