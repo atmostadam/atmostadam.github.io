@@ -8,14 +8,7 @@
 
 # Showcase
 
-API Showcase<br/>
-<https://github.com/atmostadam/cats-api>
 
-Framework Showcase<br/>
-<https://github.com/atmostadam/cats-test>
-
-Spring Boot Application Showcase<br/>
-<https://github.com/atmostadam/cats-spring-boot>
 
 # Experience
  - Lead Software Engineer [Nov 2011 - Present]

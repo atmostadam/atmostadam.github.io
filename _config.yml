@@ -1,3 +1,11 @@
 theme: jekyll-theme-minimal
 title: Adam Johnston
-description: atmostadam's Personal GitHub Prototyping Account
+description: >
+  API Showcase<br/>
+  <https://github.com/atmostadam/cats-api>
+
+  Framework Showcase<br/>
+  <https://github.com/atmostadam/cats-test>
+
+  Spring Boot Application Showcase<br/>
+  <https://github.com/atmostadam/cats-spring-boot>
