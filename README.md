@@ -3,7 +3,8 @@
  - Lead Software Engineer with 17 years of experience in the Telecommunications industry
  - A passion for developing complex enterprise applications especially on challenging projects using technologies such as Java and Spring Boot
  - Specialization in Core Java, Spring Boot, Oracle Database, JMS Queues, Maven, Docker, Amazon Corretto, Kubernetes, JBPM, Drools, Tomcat, SOAP, Swagger, J2EE, RESTful Services, JBoss EAP, Java 1.2, 1.5, 1.8, 11, 17 and many other legacy technologies
- - Academic Achievement including BBA, MBA, and MSIS | Lead Engineer for OSS Service & Device Fulfillment and Service Delivery for Residential & Commercial on Docsis & Fiber
+ - Academic Achievement including BBA, MBA, and MSIS
+ - Lead Engineer for OSS Service & Device Fulfillment and Service Delivery for Residential & Commercial on Docsis & Fiber
 
 # Showcase
 
