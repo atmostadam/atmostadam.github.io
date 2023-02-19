@@ -1,4 +1,5 @@
-# Adam Johnston<br/>Lead Software Engineer
+
+# Adam Johnston
 
  - Lead Software Engineer with 17 years of experience in the Telecommunications industry
  - A passion for developing complex enterprise applications on challenging projects using Java and Spring Boot technologies

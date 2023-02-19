@@ -1,4 +1,5 @@
-theme: jekyll-theme-cayman
-title: Adam Johnston
-show_downloads: false
-google_analytics:
+  title: Adam Johnston
+  tagline: Lead Software Engineer
+  paginate: 1
+  locale: "en"
+  theme: jekyll-theme-cayman
