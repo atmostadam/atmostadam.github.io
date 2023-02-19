@@ -8,7 +8,6 @@
 
 # Code Showcase
  - <h2><a href="https://github.com/atmostadam/cats-api">API Repository</a></h2>
- - <h2>[API Repository](https://github.com/atmostadam/cats-api/)</h2>
  - <h2><a href="https://github.com/atmostadam/cats-framework">Framework Repository</a></h2>
  - <h2><a href="https://github.com/atmostadam/cats-spring-boot">Spring Boot repository</a></h2>
 
@@ -160,11 +159,23 @@ I try to spend at least a few hours a week trying to keep up my technical skills
 CLI Integration
 
 # Partner Integrations
-Names of systems that I integrated with can be provided upon request to see if there is a fit. However not all of these companies want to publish their business relationships or entry points which is fair enough.
- - Comcast - Back Office
- - Cisco - BTS Telephony Softswitch
- - Nortel Networks - CS2K Telephony Softswitch
- - Red Hat OpenShift
+Names of systems that I have experience integrating with can be provided upon request to see if there is a fit. However, not all of these companies want to publish the extent of their business relationships or entry points which is fair enough.
+ - Comcast - Back Office & Middleware
+ - Cisco - Telephony Switches
+ - Nortel Networks - Telephony Switches
+ - Netcracker - Billing
+ - Verizon - Back Office
+ - Sigma Systems - Workflow
+ - Red Hat - VMs
+ - VMWare - VMs
+ - Oracle - Database
+ - Microsoft - Database
+ - Sun Microsystems - Hardware
+ - Rancher - Cloud
+ - Veracode - Security
+ - Incognito - DOCSIS & Cable Modems
+ - TMForum - Communications Service Provider Forum
+ - Cable Labs - Cable Company R&D
 
 # Contact Information
 
