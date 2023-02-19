@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 title: Adam Johnston
-description: About
+show_downloads: true
+google_analytics:
