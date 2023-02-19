@@ -8,6 +8,7 @@
 
 # Code Showcase
  - <h2><a href="https://github.com/atmostadam/cats-api">API Repository</a></h2>
+ - <h2>[API Repository](https://github.com/atmostadam/cats-api/)</h2>
  - <h2><a href="https://github.com/atmostadam/cats-framework">Framework Repository</a></h2>
  - <h2><a href="https://github.com/atmostadam/cats-spring-boot">Spring Boot repository</a></h2>
 
@@ -22,7 +23,7 @@
  - Kennesaw State Univerity, Master of Science in Information Systems [2009-2011]
  - Kennesaw State Univerity, Master of Business Administration [2009-2011]
 
-# Education
+# Projects
  - Approximately 100 different telecommunications projects over 17 years leading up to 8 projects at a time
 
 # Skillset
@@ -156,7 +157,16 @@ Currently Prototyping
 
 I try to spend at least a few hours a week trying to keep up my technical skillset via prototyping.
 
-Contact Information:
+CLI Integration
+
+# Partner Integrations
+Names of systems that I integrated with can be provided upon request to see if there is a fit. However not all of these companies want to publish their business relationships or entry points which is fair enough.
+ - Comcast - Back Office
+ - Cisco - BTS Telephony Softswitch
+ - Nortel Networks - CS2K Telephony Softswitch
+ - Red Hat OpenShift
+
+# Contact Information
 
 - Adam Johnston
 - Lead Software Engineer
