@@ -1,17 +1,3 @@
-theme: jekyll-theme-minimal
+theme: jekyll-theme-architect
 title: Adam Johnston
-description: >
-  API Showcase<br/>
-  ()
-
-  <br/>
-  (-test)
-
-  Spring Boot Application Showcase<br/>
-  (https://github.com/atmostadam/cats-spring)
-
-navbar-links:
-  Resources:
-    - API Showcase: "https://github.com/atmostadam/cats-api"
-    - Framework Showcase: "https://github.com/atmostadam/cats-framework"
-    - Framework Showcase: "https://github.com/atmostadam/cats-spring-boot"
+description: About
