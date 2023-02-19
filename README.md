@@ -6,11 +6,10 @@
  - Academic Achievement including BBA, MBA, and MSIS
  - Lead Engineer for OSS Service & Device Fulfillment and Service Delivery for Residential & Commercial on Docsis & Fiber
 
-# Showcase
- - API Showcase: "https://github.com/atmostadam/cats-api"
- - Framework Showcase: "https://github.com/atmostadam/cats-framework"
- - Framework Showcase: "https://github.com/atmostadam/cats-spring-boot"
-
+# Code Showcase
+ - <h2>[API Repository](https://github.com/atmostadam/cats-api)</h2>
+ - <h2>[Framework Repository](https://github.com/atmostadam/cats-framework)</h2>
+ - <h2>[Spring Boot repository](https://github.com/atmostadam/cats-spring-boot)</h2>
 
 # Experience
  - Lead Software Engineer [Nov 2011 - Present]
