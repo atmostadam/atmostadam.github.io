@@ -7,9 +7,9 @@
  - Lead Engineer for OSS Service & Device Fulfillment and Service Delivery for Residential & Commercial on Docsis & Fiber
 
 # Code Showcase
- - <h2>[API Repository](https://github.com/atmostadam/cats-api)</h2>
- - <h2>[Framework Repository](https://github.com/atmostadam/cats-framework)</h2>
- - <h2>[Spring Boot repository](https://github.com/atmostadam/cats-spring-boot)</h2>
+ - <h2><a href="https://github.com/atmostadam/cats-api">API Repository</a></h2>
+ - <h2><a href="https://github.com/atmostadam/cats-framework">Framework Repository</a></h2>
+ - <h2><a href="https://github.com/atmostadam/cats-spring-boot">Spring Boot repository</a></h2>
 
 # Experience
  - Lead Software Engineer [Nov 2011 - Present]
