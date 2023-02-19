@@ -1,5 +1,5 @@
   title: Adam Johnston
-  tagline: Lead Software Engineer
-  paginate: 1
-  locale: "en"
+  description: Lead Software Engineer
+  show_downloads: false
+  google_analytics:
   theme: jekyll-theme-cayman
