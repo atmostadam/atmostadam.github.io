@@ -23,7 +23,8 @@
 # Code Showcase
 - <h2><a href="https://github.com/atmostadam/cats-api">API Repository</a></h2>
 - <h2><a href="https://github.com/atmostadam/cats-framework">Framework Repository</a></h2>
-- <h2><a href="https://github.com/atmostadam/cats-spring-boot">Spring Boot repository</a></h2>
+- <h2><a href="https://github.com/atmostadam/cats-spring-boot">Spring Boot Repository</a></h2>
+- <h2><a href="https://github.com/atmostadam/cats-drools">Drools Repository</a></h2>
 
 # Experience
 - Lead Software Engineer [Nov 2011 - Present]
