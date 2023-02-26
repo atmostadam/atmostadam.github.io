@@ -31,7 +31,7 @@
 </h3>
 
 # Experience
-## Lead Software Engineer [Nov 2011 - Present]
+## Lead Software Engineer (11+ Years) [Nov 2011 - Present]
 - Develops advanced java-based applications using JEE technologies including EJB 3.x, dependency injection, datasources, JTA and JCA at the application and integration layers
 - Designs next generation Middleware and OSS applications such as customer self-activation, automated migrations, services provisioning and web services
 - Participates as a development lead engineer in each step of the SDLC to set up our development teams for success in resolving existing bugs and implementing enhancements or change requests
@@ -47,7 +47,7 @@
 - VoIP & Circuit Provisioning for Residential & Commercial (2005-present)
 - DOCSIS & Fiber Provisioning for Residential & Commercial (2005-present)
 
-## Sr. Software Engineer [Oct 2008 - Nov 2011]
+## Sr. Software Engineer (3 Years) [Oct 2008 - Nov 2011]
 - Troubleshot middleware workflow and web services production outages at the Unix application level to correct problems acting as top tier operations support for multiple servers and applications
 - Performed as a core team member of multiple simultaneous projects by acting as a telephony auto-provisioning operations subject matter expert for the Cisco BTS and Nortel CS2K products
 - Represented the production control team in each step of the Systems Development Life Cycle to insure operational needs are considered from development to production
@@ -66,14 +66,14 @@
 - Core Provisioning SDLC & Support (2005-present)
 - Genband VoIP CS2K Switch Upgrades (2005-2008)
 
-## IT Supervisor [Jul 2006 - Oct 2008]
+## IT Supervisor (2 Years) [Jul 2006 - Oct 2008]
 - Supervised the day to day Cox Digital Telephone and Cox High Speed Internet provisioning support to ensure outstanding service
 - Demonstrated leadership to the department by coaching, handling conflicts, managing a rotating schedule, creating documentation, and training local test desks
 - Generated reports and feedback to higher level management to provide information on performance, to show long term trends, and to recommend changes in strategy and methodology
 - Successfully undertook leadership opportunities within the department including traveling to and teaching the local test desks and dispatch, creating solutions for advanced provisioning issues, and creating documentation for proper troubleshooting within the department
 - Supervisor for Corporate Tier 2 operations
 
-## IT Contractor [Aug 2005 - Jul 2006]
+## IT Contractor (1 Year) [Aug 2005 - Jul 2006]
 - Investigated and resolved errors that occurred during any step in the auto-provisioning process for Cox’s High Speed Internet and Telephone products using an end-to-end methodology to ensure data integrity from the time a work order is entered into the billing system until the technician receives dial tone or internet access at the customer’s house
 - Created various programs using advanced Outlook, Excel, and keyboard macros to improve the efficiency and reliability of troubleshooting in the auto-provisioning process while simultaneously decreasing ticket and transaction times
 - Gained daily experience searching UNIX log files to determine the root causes of provisioning issues
