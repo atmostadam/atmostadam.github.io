@@ -1,13 +1,83 @@
 <html>
+
 <head>
-    <style/>
-    <script/>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        class Chinchou {
+            constructor() { }
+
+            get hitPoints() {
+                return 70
+            }
+
+            get attackDamage() {
+                return 10
+            }
+        }
+
+        class Kiefki {
+            constructor() { }
+
+            get hitPoints() {
+                return 70
+            }
+
+            get attackDamage() {
+                return 10
+            }
+        }
+    </script>
 </head>
+
 <body>
-Loaded
-<form id="promptForm">
-    <input name="prompt"/>
-    <button id="submit">Submit</button>
-</form>
+    <br />
+    <table>
+        <tr>
+            <td colspan="2">Pokemon Charge</td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                ANNOUNCER: Welcome to Pokemon Charge!<br />
+                ANNOUNCER: Today's challenge will be Kiefki against Chinchou!<br />
+                OWNER: Thank you, thank you very much for coming here tonight to watch this fantastic show<br />
+                CROWD: *CHEERS*
+            </td>
+            <td>
+                Kiefki<br />
+                Hit Points: 70<br />
+                Attacks</br>
+                <ul>
+                    <li>Unleash - 10</li>
+                </ul>
+            </td>
+        <tr>
+            <td>
+                Chinchou<br />
+                Hit Points: 70<br />
+                Attacks</br>
+                <ul>
+                    <li>Unknown - 10</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form id="promptForm">
+                    <input name="prompt" />
+                    <button id="submit">Go</button>
+                </form>
+            </td>
+        </tr>
+
+    </table>
+
 </body>
+
 </html>
