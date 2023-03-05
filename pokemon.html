@@ -44,53 +44,64 @@
     </script>
 </head>
 
-<body>
-    <br />
-    <table>
-        <tr>
-            <h1><td colspan="2">Pokemon Charge</td></h1>
-        </tr>
-        <tr>
-            <td rowspan="2">
-                ANNOUNCER: Welcome to Pokemon Charge!<br />
-                ANNOUNCER: Today's challenge will be Kiefki against Chinchou!<br />
-                OWNER: Thank you, thank you very much for coming here tonight to watch this fantastic show<br />
-                CROWD: *CHEERS*
-                <div id="scrollScreen"></div>
-            </td>
-            <td>
-                <b>Kiefki</b><br />
-                <img src="pokemon/images/spree.jpg" height="150" width="225" /><br />
-                Hit Points: 70<br />
-                Attacks</br>
-                <ul>
-                    <li>Unleash - 10</li>
-                </ul>
-            </td>
-        <tr>
-            <td>
-                <b>Chinchou</b><br />
-                <img src="pokemon/images/cowie.jpg" height="150" width="225" /><br />
-                Hit Points: 70<br />
-                Attacks</br>
-                <ul>
-                    <li>Unknown - 10</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <form id="commandForm">
-                    <input id="command" />
-                </form>
-                <button type='button' onclick="main()">Go</button> 
-            </td>
-        </tr>
-
-    </table>
-
-    <br />
-
+<body style="background:aqua">
+    <div style="margin: auto; width: 50%">
+        <table style="text-align:center; background-color:yellow">
+            <tr>
+                <h1>
+                    <td colspan="2"
+                        style="background: orange; font-family: Papyrus, Fantasy; font-weight: bold; font-size: xx-large;">
+                        Pokemon Charge</td>
+                </h1>
+            </tr>
+            <tr>
+                <td rowspan="2"
+                    style="text-align:left; background:black; color:white; font-family: 'Courier New', monospace; font-size: large;">
+                    ANNOUNCER: Welcome to Pokemon Charge!<br />
+                    ANNOUNCER: Today's challenge will be Kiefki against Chinchou!<br />
+                    OWNER: Thank you, thank you very much for coming here tonight to watch this fantastic show<br />
+                    CROWD: *CHEERS*
+                    <div id="scrollScreen"></div>
+                </td>
+                <td style="text-align:left; background:lightyellow;">
+                    <span
+                        style="font-size: x-large; font-family: Papyrus, Fantasy; font-weight: bold; text-align:center">
+                        Kiefki
+                    </span><br />
+                    <img src="pokemon/images/spree.jpg" height="150" width="225" /><br />
+                    <span style="font-size: large; font-family: Arial, Helvetica, sans-serif;"></span>
+                    Hit Points: 70<br />
+                    Attacks</br>
+                    <ul>
+                        <li>Unleash - 10</li>
+                    </ul>
+                    </span>
+                </td>
+            <tr>
+                <td style="text-align:left; background:lightsalmon;">
+                    <span style="font-size: x-large; font-family: Papyrus, Fantasy; font-weight: bold;">
+                        Chinchou
+                    </span><br />
+                    <img src="pokemon/images/cowie.jpg" height="150" width="225" /><br />
+                    <span style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+                        Hit Points: 70<br />
+                        Attacks</br>
+                        <ul>
+                            <li>Unknown - 10</li>
+                        </ul>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="background:purple">
+                    <form id="commandForm">
+                        <input id="command" />
+                    </form>
+                    <button type='button' onclick="main()">Go</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>
