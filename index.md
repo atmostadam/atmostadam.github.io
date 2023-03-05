@@ -1,7 +1,6 @@
 [//]: # (Adam Johnston)
 
 # Highlights
-
 - Lead Software Engineer with 17 years of experience in the Telecommunications industry
 - A passion for developing complex enterprise applications on challenging projects using Java and Spring Boot technologies
 - Specialization in Core Java, Spring Boot, Oracle Database, JMS Queues, Maven, Docker, Amazon Corretto, Kubernetes, JBPM, Drools, Tomcat, SOAP, Swagger, J2EE, RESTful Services, JBoss EAP, Java 1.2, 1.5, 1.8, 11, 17 and many other legacy technologies
@@ -21,16 +20,64 @@
 - An honesty first approach including level setting expectations, fact-based estimation
 
 # Code Showcase
-- <h2><a href="https://github.com/atmostadam/cats-api">API Repository</a></h2>
-- <h2><a href="https://github.com/atmostadam/cats-framework">Framework Repository</a></h2>
-- <h2><a href="https://github.com/atmostadam/cats-spring-boot">Spring Boot Repository</a></h2>
-- <h2><a href="https://github.com/atmostadam/cats-drools">Drools Repository</a></h2>
+<h3>
+  <ul>
+    <li><a href="https://github.com/atmostadam/cats-api">API Repository</a></li>
+    <li><a href="https://github.com/atmostadam/cats-framework">Framework Repository</a></li>
+    <li><a href="https://github.com/atmostadam/cats-spring-boot">Spring Boot Repository</a></li>
+    <li><a href="https://github.com/atmostadam/cats-drools">Drools Repository</a></li>
+    <li><a href="https://github.com/atmostadam/cats-jbpm">jBPM Repository</a></li>
+  </ul>
+</h3>
 
 # Experience
-- Lead Software Engineer [Nov 2011 - Present]
-- Sr. Software Engineer [Oct 2008 - Nov 2011]
-- IT Supervisor [Jul 2006 - Oct 2008]
-- IT Contractor [Aug 2005 - Jul 2006]
+## Lead Software Engineer (11+ Years) [Nov 2011 - Present]
+- Develops advanced java-based applications using JEE technologies including EJB 3.x, dependency injection, datasources, JTA and JCA at the application and integration layers
+- Designs next generation Middleware and OSS applications such as customer self-activation, automated migrations, services provisioning and web services
+- Participates as a development lead engineer in each step of the SDLC to set up our development teams for success in resolving existing bugs and implementing enhancements or change requests
+- Leads in new product development as a core provisioning lead developer throughout the project lifecycle including status reports to the executive team, creating development timelines and cost estimates, code review and approval, deliverable creation and traceability, scoring of cross-functional core team deliverables and responsibility for overall success or failure of OSS projects at the development level
+- Translates business and functional requirements into system requirements, technical requirements and design documents to ensure that the final application meets the business needs
+- Reduces defects by standardizing unit and integration test cases, organizing code reviews, mentoring junior developers, executing load and negative tests, implementing J2EE standard code practices and ensuring fully documented code
+- Lead Software Engineer for design, implementation, unit testing and development integration testing for the Cox provisioning team for the following major company initiatives
+### Development Leader for Provisioning Initiatives
+- Residential PON gigabit fiber (2014-present)
+- OSS provisioning platform next generation upgrade (2013-present)
+- Automated Self Activation (2011-2012)
+- Home Automation & Home Security Provisioning for Residential & Commercial (2014-present)
+- VoIP & Circuit Provisioning for Residential & Commercial (2005-present)
+- DOCSIS & Fiber Provisioning for Residential & Commercial (2005-present)
+
+## Sr. Software Engineer (3 Years) [Oct 2008 - Nov 2011]
+- Troubleshot middleware workflow and web services production outages at the Unix application level to correct problems acting as top tier operations support for multiple servers and applications
+- Performed as a core team member of multiple simultaneous projects by acting as a telephony auto-provisioning operations subject matter expert for the Cisco BTS and Nortel CS2K products
+- Represented the production control team in each step of the Systems Development Life Cycle to insure operational needs are considered from development to production
+- Provided UNIX, Tomcat, and Service Broker administration as well as system level operational support for these applications
+- Supported QA, Project Management, Provisioning Support, Business Analysts, and Development teams as a production control engineer within the Cox Digital Telephone provisioning field of expertise
+- Developed monitoring tools via snmp, shell scripts and syslog monitoring to notify teams of an issue via mail server or centralized logging server
+- Senior engineer for corporate tier 3 & tier 4 operations from the requirements phase through post-warranty for the Cox provisioning team for the following mission critical projects
+### Operations Leader for Provisioning Initiatives
+- Packet Line Migration Tool (2011-2012)
+- Voicemail Upgrade (2009-2011)
+- OSS provisioning server upgrade initiative (2009-2010)
+- Circuit to Packet Migration (2008-2010)
+- Next Generation SMP Upgrade (2008-2009)
+- Provisioning Integration Web Services Layer & Support (2007-present)
+- Market Consolidation and BTS to CS2K Switch Upgrades (2006-2008)
+- Core Provisioning SDLC & Support (2005-present)
+- Genband VoIP CS2K Switch Upgrades (2005-2008)
+
+## IT Supervisor (2 Years) [Jul 2006 - Oct 2008]
+- Supervised the day to day Cox Digital Telephone and Cox High Speed Internet provisioning support to ensure outstanding service
+- Demonstrated leadership to the department by coaching, handling conflicts, managing a rotating schedule, creating documentation, and training local test desks
+- Generated reports and feedback to higher level management to provide information on performance, to show long term trends, and to recommend changes in strategy and methodology
+- Successfully undertook leadership opportunities within the department including traveling to and teaching the local test desks and dispatch, creating solutions for advanced provisioning issues, and creating documentation for proper troubleshooting within the department
+- Supervisor for Corporate Tier 2 operations
+
+## IT Contractor (1 Year) [Aug 2005 - Jul 2006]
+- Investigated and resolved errors that occurred during any step in the auto-provisioning process for Cox’s High Speed Internet and Telephone products using an end-to-end methodology to ensure data integrity from the time a work order is entered into the billing system until the technician receives dial tone or internet access at the customer’s house
+- Created various programs using advanced Outlook, Excel, and keyboard macros to improve the efficiency and reliability of troubleshooting in the auto-provisioning process while simultaneously decreasing ticket and transaction times
+- Gained daily experience searching UNIX log files to determine the root causes of provisioning issues
+- Trained and educated new employees and local test desks to ensure knowledgeable staff and to prevent errors in the overall provisioning process
 
 # Education
 - University of Georgia, BBA in Management Information Systems [2002-2005]
@@ -80,14 +127,8 @@ And I spend about 50% of my time doing Software & Professional Leadership activi
 - Stakeholder engagement
 - Final Pull Request Approval Before Production
 - Simplification of Complex Problems
-- Executive Presentation
-  <br/></br></br>
-  I spend about 50% of my time doing Software & Professional Leadership activities</br>
-  But...</br>
-  TBH...</br>
-  I'd rather be coding!</br>
-  <br/></br></br>
-  Cloud, CI/CD & Infrastructure
+- Executive Presentations
+- Cloud, CI/CD & Infrastructure
 - Maven
 - Kubernetes
 - Docker
