@@ -55,6 +55,7 @@
 - Supported QA, Project Management, Provisioning Support, Business Analysts, and Development teams as a production control engineer within the Cox Digital Telephone provisioning field of expertise
 - Developed monitoring tools via snmp, shell scripts and syslog monitoring to notify teams of an issue via mail server or centralized logging server
 - Senior engineer for corporate tier 3 & tier 4 operations from the requirements phase through post-warranty for the Cox provisioning team for the following mission critical projects
+
 ### Operations Leader for Provisioning Initiatives
 - Packet Line Migration Tool (2011-2012)
 - Voicemail Upgrade (2009-2011)
@@ -72,12 +73,23 @@
 - Generated reports and feedback to higher level management to provide information on performance, to show long term trends, and to recommend changes in strategy and methodology
 - Successfully undertook leadership opportunities within the department including traveling to and teaching the local test desks and dispatch, creating solutions for advanced provisioning issues, and creating documentation for proper troubleshooting within the department
 - Supervisor for Corporate Tier 2 operations
+Supervisor, IS July 2007-Present
+- Supervise the day to day provisioning support to ensure outstanding service and efficient ticket resolution
+- Provide leadership to the department by coaching, answering questions on advanced topics, handling conflicts within the department and other groups in conjunction with higher levels of management, and acting as point of contact for the department when the manager is taking PTO or traveling
+- Generate reports and feedback to higher level management to provide information on performance, to show long term trends, and to recommend changes in strategy and methodology
+- Create and maintain a rotating schedule of up to 10 employees across First and Second shift to provide adequate support and to schedule PTO throughout all hours of operation
+Analyst I July 2006-July 2007
+- Initiated new responsibilities in addition to those as a Contractor including taking the auto-provisioning process to a new level by educating local test desk and dispatch about advance provisioning features, troubleshooting issues more quickly, and helping to decrease the number of provisioning failures
+- Created various programs using advanced Outlook, Excel, and keyboard macros to improve the efficiency and reliability of troubleshooting in the auto-provisioning process while simultaneously decreasing ticket and transaction times
+- Successfully undertook leadership opportunities within the department including traveling to and teaching the local test desks and dispatch, creating solutions for advanced provisioning issues, and creating documentation for proper troubleshooting within the department
+- Gained daily experience searching UNIX log files to determine the root causes of provisioning issues
 
 ## IT Contractor (1 Year) [Aug 2005 - Jul 2006]
 - Investigated and resolved errors that occurred during any step in the auto-provisioning process for Cox’s High Speed Internet and Telephone products using an end-to-end methodology to ensure data integrity from the time a work order is entered into the billing system until the technician receives dial tone or internet access at the customer’s house
 - Created various programs using advanced Outlook, Excel, and keyboard macros to improve the efficiency and reliability of troubleshooting in the auto-provisioning process while simultaneously decreasing ticket and transaction times
 - Gained daily experience searching UNIX log files to determine the root causes of provisioning issues
 - Trained and educated new employees and local test desks to ensure knowledgeable staff and to prevent errors in the overall provisioning process
+· Developed daily, weekly and monthly reports to show the number of tickets and trends in ticketing to be presented to determine the overall progress of the department
 
 # Education
 - University of Georgia, BBA in Management Information Systems [2002-2005]
