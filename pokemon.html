@@ -17,7 +17,7 @@
                 return 70
             }
 
-            get attackDamage() {
+            get damage() {
                 return 10
             }
         }
@@ -29,9 +29,15 @@
                 return 70
             }
 
-            get attackDamage() {
+            get damage() {
                 return 10
             }
+        }
+
+        function main() {
+            var commandValue = document.getElementById('command').value;
+            var scrollScreen = document.getElementById("scrollScreen");
+            scrollScreen.innerHTML += commandValue;
         }
     </script>
 </head>
@@ -40,7 +46,7 @@
     <br />
     <table>
         <tr>
-            <td colspan="2">Pokemon Charge</td>
+            <h1><td colspan="2">Pokemon Charge</td></h1>
         </tr>
         <tr>
             <td rowspan="2">
@@ -48,6 +54,7 @@
                 ANNOUNCER: Today's challenge will be Kiefki against Chinchou!<br />
                 OWNER: Thank you, thank you very much for coming here tonight to watch this fantastic show<br />
                 CROWD: *CHEERS*
+                <div id="scrollScreen"></div>
             </td>
             <td>
                 <b>Kiefki</b><br />
@@ -71,9 +78,9 @@
         </tr>
         <tr>
             <td colspan="2">
-                <form id="promptForm">
-                    <input name="prompt" />
-                    <button id="submit">Go</button>
+                <form id="commandForm" onsubmit="main()">
+                    <input id="command" />
+                    <input type="submit" value="Go" />
                 </form>
             </td>
         </tr>
