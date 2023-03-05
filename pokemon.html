@@ -37,7 +37,9 @@
         function main() {
             var commandValue = document.getElementById('command').value;
             var scrollScreen = document.getElementById("scrollScreen");
-            scrollScreen.innerHTML += commandValue;
+            var child = document.createTextNode(commandValue);
+            scrollScreen.appendChild(document.createElement("br"));
+            scrollScreen.appendChild(child);
         }
     </script>
 </head>
@@ -78,14 +80,16 @@
         </tr>
         <tr>
             <td colspan="2">
-                <form id="commandForm" onsubmit="main()">
+                <form id="commandForm">
                     <input id="command" />
-                    <input type="submit" value="Go" />
                 </form>
+                <button type='button' onclick="main()">Go</button> 
             </td>
         </tr>
 
     </table>
+
+    <br />
 
 </body>
 
