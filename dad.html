@@ -1,0 +1,117 @@
+<head>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* full window width */
+    text-align: center;
+}
+
+    </style>
+    <script>
+        var money = 0;
+
+        function writeSomeCode() {
+            var income = getRandomInt(1000, 2000);
+            money += income;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.innerText = "$" + money;
+            var scrollScreen = document.getElementById("scrollScreen");
+            scrollScreen.appendChild(document.createElement("br"));
+            scrollScreen.appendChild(document.createTextNode("Dad works hard for a week and earns $" + income));
+        }
+        function doConsulting() {
+            var income = getRandomInt(1500, 2000);
+            money += income;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.innerText = "$" + money;
+            var scrollScreen = document.getElementById("scrollScreen");
+            scrollScreen.appendChild(document.createElement("br"));
+            scrollScreen.appendChild(document.createTextNode("Dad recommends some new software to his client and earns $" + income));
+        }
+        function resellOnEbay() {
+            var income = getRandomInt(250, 1000);
+            money += income;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.innerText = "$" + money;
+            var scrollScreen = document.getElementById("scrollScreen");
+            scrollScreen.appendChild(document.createElement("br"));
+            scrollScreen.appendChild(document.createTextNode("Dad buys some stuff from factories and resells on ebay earning $" + income));
+
+        }
+        function petACat() {
+            var income = getRandomInt(1, 10);
+            money -= income;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.innerText = "$" + money;
+            var scrollScreen = document.getElementById("scrollScreen");
+            scrollScreen.appendChild(document.createElement("br"));
+            scrollScreen.appendChild(document.createTextNode("Dad pets a cat. He loses $" + income + " due to opportunity cost, but at least he is happy."));
+        }
+        
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+    </script>
+</head>
+<body style="background-color: black; font-weight: bold; font-size: large; color: white;">
+    <div style="margin: auto; width: 50%">
+    <table width="1200em">
+        <tr>
+            <td colspan="3" style="font-size: xx-large; text-align: center;">
+                Dad's World
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;" width="25%">
+                <table>
+                    <tr>
+                        <td>Write Some Code</td>
+                        <td><input type="button" value="Type" onclick="writeSomeCode()" /></td>
+                    </tr>
+                    <tr>
+                        <td>Do Consulting</td>
+                        <td><input type="button" value="Consult" onclick="doConsulting()" /></td>
+                    </tr>
+                    <tr>
+                        <td>Resell Stuff on Ebay</td>
+                        <td><input type="button" value="Resell" onclick="resellOnEbay()" /></td>
+                    </tr>
+                    <tr>
+                        <td>Pet a Cat</td>
+                        <td><input type="button" value="Pet" onclick="petACat()" /></td>
+                    </tr>
+                </table>
+            </td>
+            <td style="background: black; font-family: Papyrus, Fantasy; border-width: 30em; border: white" width="50%">
+                Dad wakes up in the morning.<br/>
+                Dad takes a shower.<br/>
+                Dad needs to get money.<br/>
+                <div id="scrollScreen"></div>
+            </td>
+            <td style="vertical-align: top;" width="25%">
+                <table>
+                    <tr>
+                        <td>Money</td>
+                        <td><div id="moneyId"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Houses</td>
+                        <td><div id="housesId"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Cars</td>
+                        <td><div id="carsId"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Boats</td>
+                        <td><div id="boatsId"></div></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
