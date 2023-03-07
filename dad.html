@@ -1,15 +1,33 @@
 <head>
-    <style>
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%; /* full window width */
-    text-align: center;
-}
 
-    </style>
     <script>
         var money = 0;
+
+        class Job {
+   constructor(name, description, perHourSalary, payPeriod) {
+      this.name;
+      this.description;
+      this.perHourSalary;
+      this.payPeriodInDays;
+      this.clickDate = new Date() + 10000;
+   }
+
+   get name() {
+return this.name;
+   }
+
+   get description() {
+return this.description;
+}
+
+remaining() {
+var timeRemaining = this.clickDate - new Date();
+}
+
+   clickPay(hourWorked) {
+      return perHourSalary * hourWorked;
+   }
+}
 
         function writeSomeCode() {
             var income = getRandomInt(1000, 2000);
@@ -54,60 +72,82 @@ body {
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min) + min);
         }
+
+        function loadMoneyId() {
+            money += 10000;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.innerText = "$" + money;
+        }
+
     </script>
 </head>
-<body style="background-color: black; font-weight: bold; font-size: large; color: white;">
-    <div style="margin: auto; width: 50%">
-    <table width="1200em">
+<body style="background-color: black; font-weight: bold; font-size: large; color: white; font-family: Arial, Helvetica, sans-serif;">
+    <div style="margin: auto; width: 1600px">
+        <h1 style="text-align: center;">Dad's world</h1>
+    <table style="table-layout: fixed; width: 1600px">
         <tr>
-            <td colspan="3" style="font-size: xx-large; text-align: center;">
-                Dad's World
-            </td>
-        </tr>
-        <tr>
-            <td style="vertical-align: top;" width="25%">
+            <td style="vertical-align: top; width: 400px;">
                 <table>
                     <tr>
-                        <td>Write Some Code</td>
-                        <td><input type="button" value="Type" onclick="writeSomeCode()" /></td>
+                        <td colspan="2" style="text-align: center;">
+                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Career - Paper Boy</span><br/>
+                            <span style="font-size: 16px; color: green; font-weight: bold;">$1.00 per hour</span><br/>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Do Consulting</td>
-                        <td><input type="button" value="Consult" onclick="doConsulting()" /></td>
+                        <td><img src="dad/images/paperboy.jpg" height="150" width="150"></td>
+                        <td><input type="button" value="Ride" onclick="rideBike()" style="padding: 15px 32px; font-size: 16px; background-color: white;"/></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="text-align: center; padding-top: 50px;">
+                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif; margin-top: 100px;">Second Job - Shoe Shiner</span><br/>
+                            <span style="font-size: 16px; color: green; font-weight: bold;">$1.00 per hour</span><br/>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Resell Stuff on Ebay</td>
-                        <td><input type="button" value="Resell" onclick="resellOnEbay()" /></td>
+                        <td><img src="dad/images/shoeshiner.jpg" height="150" width="150"></td>
+                        <td><input type="button" value="Shine" onclick="shoeShine()" style="padding: 15px 32px; font-size: 16px; background-color: white;"/></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="text-align: center; padding-top: 50px;">
+                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Freelance - Dog Sitter</span><br/>
+                            <span style="font-size: 16px; color: green; font-weight: bold;">$1.00 per hour</span><br/>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Pet a Cat</td>
-                        <td><input type="button" value="Pet" onclick="petACat()" /></td>
+                        <td><img src="dad/images/dogsitter.jpg" height="150" width="150"></td>
+                        <td><input type="button" value="Watch" onclick="dogSit()" style="padding: 15px 32px; font-size: 16px; background-color: white;"/></td>
                     </tr>
                 </table>
             </td>
-            <td style="background: black; font-family: Papyrus, Fantasy; border-width: 30em; border: white" width="50%">
+            <td style="border: 1px solid white; font-family: Papyrus, Fantasy; vertical-align: bottom; width: 900px;">
                 Dad wakes up in the morning.<br/>
                 Dad takes a shower.<br/>
                 Dad needs to get money.<br/>
                 <div id="scrollScreen"></div>
             </td>
-            <td style="vertical-align: top;" width="25%">
+            <td style="vertical-align: top; width: 300px;">
                 <table>
                     <tr>
-                        <td>Money</td>
-                        <td><div id="moneyId"></div></td>
+                        <td style="padding-top: 10px; padding-left: 50px;">Money</td>
+                        <td style="padding-top: 10px;"><div id="moneyId">0</div><script type="text/javascript">loadMoneyId()</script></td>
                     </tr>
                     <tr>
-                        <td>Houses</td>
-                        <td><div id="housesId"></div></td>
+                        <td style="padding-top: 10px; padding-left: 50px;">Houses</td>
+                        <td style="padding-top: 10px;"><div id="housesId">0</div></td>
+                        <td style="padding-top: 10px;"><input type="button" id="moreHouses" value="Buy" /></td>
                     </tr>
                     <tr>
-                        <td>Cars</td>
-                        <td><div id="carsId"></div></td>
+                        <td style="padding-top: 10px; padding-left: 50px;">Cars</td>
+                        <td style="padding-top: 10px;"><div id="carsId">0</div></td>
+                        <td style="padding-top: 10px;"><input type="button" id="moreCars" value="Buy" /></td>
                     </tr>
                     <tr>
-                        <td>Boats</td>
-                        <td><div id="boatsId"></div></td>
+                        <td style="padding-top: 10px; padding-left: 50px;">Boats</td>
+                        <td style="padding-top: 10px;"><div id="boatsId">0</div></td>
+                        <td style="padding-top: 10px;"><input type="button" id="moreBoats" value="Buy" onclick="buyBoats()" /></td>
                     </tr>
                 </table>
             </td>
