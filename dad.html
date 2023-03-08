@@ -1,6 +1,8 @@
 <head>
 
     <script>
+        // We would like to use JQuery -> https://api.jquery.com/fadeIn/
+
         var money = 0;
 
         class Job {
@@ -74,80 +76,191 @@ var timeRemaining = this.clickDate - new Date();
         }
 
         function loadMoneyId() {
-            money += 10000;
+            money += 1;
             var moneyId = document.getElementById("moneyId");
             moneyId.innerText = "$" + money;
         }
 
+        function careerGetPaid() {
+            payDay(10);
+        }
+
+        function secondJobGetPaid() {
+            payDay(10);
+        }
+
+        function freelanceGetPaid() {
+            payDay(10);
+        }
+
+
+
+        function dadOut(message) {
+            scrollScreen.appendChild(document.createTextNode(message));
+            scrollScreen.appendChild(document.createElement("br"));
+        }
+
+
+        function payDay(cash) {
+            money += cash;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.innerText = "$" + money;
+            dadOut("Dad received his monthly check of $" + cash + ".");
+        }
+
+        function rideBike() {
+            rideBikePayInterval = setInterval(payDay(800), 10000);
+}
+
+        function sayDadWakes1() {
+            dadOut("You feel a soft nudging on your shoulder that quickly turns into an aggressive poking as you hear a child's voice say, \"Daddy, are you getting up today?\"");
+        }
+
+        function sayDadWakes2() {
+            dadOut("You look at the clock and it says 9:12AM. You are already running late for work!");
+        }
+
+        function sayDadWakes3() {
+            dadOut("You take a quick shower and shave your face as fast as you can.");
+        }
+
+        function dadNeedsMoney1() {
+            dadOut("You needs to start working so you can get money.");
+            document.getElementById("careerTable").style.display = "block";
+            document.getElementById("assets").style.display = "block";
+            document.getElementById("investments").style.display = "block";
+        }
+
+        setTimeout(sayDadWakes1, 1); // 50
+        setTimeout(sayDadWakes2, 2); //5000
+        setTimeout(sayDadWakes3, 3); //10000
+        setTimeout(dadNeedsMoney1, 4); //15000
+
+        setInterval(payDay(800), 10000);
     </script>
 </head>
-<body style="background-color: black; font-weight: bold; font-size: large; color: white; font-family: Arial, Helvetica, sans-serif;">
-    <div style="margin: auto; width: 1600px">
-        <h1 style="text-align: center;">Dad's world</h1>
-    <table style="table-layout: fixed; width: 1600px">
+<body style="background-color: black; font-weight: bold; font-size: large; color: white; font-family: Helvetica, sans-serif;">
+    <div style="margin: auto; width: 1700px">
+        <h1 style="text-align: center; font-family: Helvetica, sans-serif;">Dad's world</h1>
+    <table style="table-layout: fixed; width: 1700px;">
         <tr>
-            <td style="vertical-align: top; width: 400px;">
-                <table>
+            <td style="vertical-align: top; width: 340px;">
+                <table id="careerTable" style="border-collapse: separate; border-spacing: 0 20px; display: none;">
                     <tr>
-                        <td colspan="2" style="text-align: center;">
-                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Career - Paper Boy</span><br/>
-                            <span style="font-size: 16px; color: green; font-weight: bold;">$1.00 per hour</span><br/>
+                        <td id="career" style="text-align: center; width: 170px; border: 1px solid white; padding-bottom: 10px; padding-top: 10px; " >
+                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Paper Boy</span><br/>
+                            <img src="dad/images/paperboy.jpg" height="125" width="125"><br/>
+                            <span style="font-size: 16px; color: red; font-family: Arial, Helvetica, sans-serif;">Career</span>
+                        </td>
+                        <td id="careerButton" style="text-align: center; width: 170px;" >
+                            <input type="button" value="Deliver" onclick="rideBike()" style="padding: 10px 15px; font-size: 26px; background-color: white; "/><br/>
+                            <span style="font-size: 20px; color: green;">$800 per month</span>  
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="dad/images/paperboy.jpg" height="150" width="150"></td>
-                        <td><input type="button" value="Ride" onclick="rideBike()" style="padding: 15px 32px; font-size: 16px; background-color: white;"/></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2" style="text-align: center; padding-top: 50px;">
-                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif; margin-top: 100px;">Second Job - Shoe Shiner</span><br/>
-                            <span style="font-size: 16px; color: green; font-weight: bold;">$1.00 per hour</span><br/>
+                        <td id="secondJob" style="text-align: center; width: 170px; border: 1px solid white; padding-bottom: 10px; padding-top: 10px; " >
+                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Shoe Shiner</span><br/>
+                            <img src="dad/images/shoeshiner.jpg" height="125" width="125"><br/>
+                            <span style="font-size: 16px; color: red; font-family: Arial, Helvetica, sans-serif;">Second Job</span><br/>
+                        </td>
+                        <td id="secondJobButton" style="text-align: center;" >
+                            <input type="button" value="Shine" onclick="shoeShine()"style="padding: 10px 15px; font-size: 26px; background-color: white; "/><br/>
+                            <span style="font-size: 20px; color: green;">$500 per month</span>  
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="dad/images/shoeshiner.jpg" height="150" width="150"></td>
-                        <td><input type="button" value="Shine" onclick="shoeShine()" style="padding: 15px 32px; font-size: 16px; background-color: white;"/></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2" style="text-align: center; padding-top: 50px;">
-                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Freelance - Dog Sitter</span><br/>
-                            <span style="font-size: 16px; color: green; font-weight: bold;">$1.00 per hour</span><br/>
+                        <td id="freelance" style="text-align: center; width: 170px; border: 1px solid white; padding-bottom: 10px; padding-top: 10px; " >
+                            <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Dog Sitter</span><br/>
+                            <img src="dad/images/dogsitter.jpg" height="125" width="125"><br/>
+                            <span style="font-size: 16px; color: red; font-family: Arial, Helvetica, sans-serif;">Freelance</span><br/>
                         </td>
-                    </tr>
-                    <tr>
-                        <td><img src="dad/images/dogsitter.jpg" height="150" width="150"></td>
-                        <td><input type="button" value="Watch" onclick="dogSit()" style="padding: 15px 32px; font-size: 16px; background-color: white;"/></td>
+                        <td id="freelanceButton" style="text-align: center;" >
+                            <input type="button" value="Sit" onclick="dogSit()" style="padding: 10px 15px; font-size: 26px; background-color: white; "/><br/>
+                            <span style="font-size: 20px; color: green;">$480 per month</span>  
+                        </td>
                     </tr>
                 </table>
             </td>
-            <td style="border: 1px solid white; font-family: Papyrus, Fantasy; vertical-align: bottom; width: 900px;">
-                Dad wakes up in the morning.<br/>
-                Dad takes a shower.<br/>
-                Dad needs to get money.<br/>
+            <td style="border: 1px solid white; font-size: 16px; font-family: Verdana, sans-serif; width: 900px; display: block; height: 800px; overflow: auto;">
                 <div id="scrollScreen"></div>
             </td>
-            <td style="vertical-align: top; width: 300px;">
-                <table>
+            <td style="vertical-align: top; text-align: center; width: 210px; padding-left: 10px;">
+                <table id="assets" style="border: 1px solid white; padding: 5px;  display: none;">
                     <tr>
-                        <td style="padding-top: 10px; padding-left: 50px;">Money</td>
-                        <td style="padding-top: 10px;"><div id="moneyId">0</div><script type="text/javascript">loadMoneyId()</script></td>
+                        <td colspan="3" style="font-size: 22px; font-family: Helvetica, sans-serif; color: green; text-align: center;">
+                            Assets
+                        </td>
                     </tr>
                     <tr>
-                        <td style="padding-top: 10px; padding-left: 50px;">Houses</td>
-                        <td style="padding-top: 10px;"><div id="housesId">0</div></td>
-                        <td style="padding-top: 10px;"><input type="button" id="moreHouses" value="Buy" /></td>
+                        <td style="padding: 5px;">Money</td>
+                        <td style="padding: 5px;"><div id="moneyId">0</div><script type="text/javascript">loadMoneyId()</script></td>
                     </tr>
                     <tr>
-                        <td style="padding-top: 10px; padding-left: 50px;">Cars</td>
-                        <td style="padding-top: 10px;"><div id="carsId">0</div></td>
-                        <td style="padding-top: 10px;"><input type="button" id="moreCars" value="Buy" /></td>
+                        <td style="padding: 5px;">Houses</td>
+                        <td style="padding: 5px;"><div id="housesId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreHouses" value="Buy" onclick="buyHouse()"/></td>
                     </tr>
                     <tr>
-                        <td style="padding-top: 10px; padding-left: 50px;">Boats</td>
-                        <td style="padding-top: 10px;"><div id="boatsId">0</div></td>
-                        <td style="padding-top: 10px;"><input type="button" id="moreBoats" value="Buy" onclick="buyBoats()" /></td>
+                        <td style="padding: 5px;">Cars</td>
+                        <td style="padding: 5px;"><div id="carsId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreCars" value="Buy" onclick="buyCar()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Boats</td>
+                        <td style="padding: 5px;"><div id="boatsId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreBoats" value="Buy" onclick="buyBoat()" /></td>
+                    </tr>
+                </table>
+            </td>
+            <td style="vertical-align: top; text-align: center; width: 210px; padding-left: 10px;">
+                <table id="investments" style="border: 1px solid white; padding: 5px;  display: none;">
+                    <tr>
+                        <td colspan="3" style="font-size: 22px; font-family: Helvetica, sans-serif; color: green; text-align: center;">
+                            Investments
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Stocks</td>
+                        <td style="padding: 5px;"><div id="stocksId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreStocks" value="Buy" onclick="buyStocks()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Bonds</td>
+                        <td style="padding: 5px;"><div id="bonds">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreBonds" value="Buy" onclick="buyBonds()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Treasury Bills</td>
+                        <td style="padding: 5px;"><div id="tbillsId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreTbills" value="Buy" onclick="buyTbills()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">CDs</td>
+                        <td style="padding: 5px;"><div id="cdId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreCDs" value="Buy" onclick="buyCDs()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Annuities</td>
+                        <td style="padding: 5px;"><div id="annuitiesId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreAnnuities" value="Buy" onclick="buysAnnuities()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Options</td>
+                        <td style="padding: 5px;"><div id="optionsId">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreOptions" value="Buy" onclick="moreOptions()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Rental Houses</td>
+                        <td style="padding: 5px;"><div id="rentalHouses">0</div></td>
+                        <td style="padding: 5px;"><input type="button" id="moreRentalHouses" value="Buy" onclick="buyRentalHouses()" /></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Commercial Real Estate</td>
+                        <td style="padding: 5px;">N/A</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;">Hedge Fund</td>
+                        <td style="padding: 5px;">N/A</td>
                     </tr>
                 </table>
             </td>
