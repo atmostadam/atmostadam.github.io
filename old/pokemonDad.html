@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        class Chinchou {
+            constructor() { }
+
+            get hitPoints() {
+                return 70
+            }
+
+            get damage() {
+                return 10
+            }
+        }
+
+        class Kiefki {
+            constructor() { }
+
+            get hitPoints() {
+                return 70
+            }
+
+            get damage() {
+                return 10
+            }
+        }
+
+        function main() {
+            var commandValue = document.getElementById('command').value;
+            var scrollScreen = document.getElementById("scrollScreen");
+            var child = document.createTextNode(commandValue);
+            scrollScreen.appendChild(document.createElement("br"));
+            scrollScreen.appendChild(child);
+        }
+    </script>
+</head>
+
+<body>
+    <br />
+    <table>
+        <tr>
+            <h1><td colspan="2">Pokemon Charge</td></h1>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                ANNOUNCER: Welcome to Pokemon Charge!<br />
+                ANNOUNCER: Today's challenge will be Kiefki against Chinchou!<br />
+                OWNER: Thank you, thank you very much for coming here tonight to watch this fantastic show<br />
+                CROWD: *CHEERS*
+                <div id="scrollScreen"></div>
+            </td>
+            <td>
+                <b>Kiefki</b><br />
+                <img src="pokemon/images/spree.jpg" height="150" width="225" /><br />
+                Hit Points: 70<br />
+                Attacks</br>
+                <ul>
+                    <li>Unleash - 10</li>
+                </ul>
+            </td>
+        <tr>
+            <td>
+                <b>Chinchou</b><br />
+                <img src="pokemon/images/cowie.jpg" height="150" width="225" /><br />
+                Hit Points: 70<br />
+                Attacks</br>
+                <ul>
+                    <li>Unknown - 10</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form id="commandForm">
+                    <input id="command" />
+                </form>
+                <button type='button' onclick="main()">Go</button> 
+            </td>
+        </tr>
+
+    </table>
+
+    <br />
+
+</body>
+
+</html>
