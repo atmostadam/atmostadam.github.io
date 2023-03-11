@@ -46,6 +46,9 @@
                     dadOut("CONGRATS! Burger has won the game!");
                 } else {
                     document.getElementById("attack2").style.display = "block";
+                    var turn = document.getElementById("turn");
+                    turn.removeChild(turn.firstChild);
+                    turn.appendChild(document.createTextNode("Fries's Turn"));
                 }
             }
 
@@ -61,10 +64,30 @@
                     dadOut("CONGRATS! Fries has won the game!");
                 } else {
                     document.getElementById("attack1").style.display = "block";
+                    var turn = document.getElementById("turn");
+                    turn.removeChild(turn.firstChild);
+                    turn.appendChild(document.createTextNode("Burger's Turn"));
                 }
             }
 
-            dadOut("Welcome to the battle of Burger vs Fries!");
+            function load() {
+                dadOut("Welcome to the battle of Burger vs Fries!");
+                dadOut("Burger or Fries?");
+
+                var turn = document.getElementById("turn");
+                turn.removeChild(turn.firstChild);
+                turn.appendChild(document.createTextNode("Will you choose Burger or Fries?"));
+
+                var p1HP = document.getElementById("player1HPId");
+                p1HP.removeChild(p1HP.firstChild);
+                p1HP.appendChild(document.createTextNode(player1HP + "/" + player1MaxHP));
+
+                var p2HP = document.getElementById("player2HPId");
+                p1HP.removeChild(p2HP.firstChild);
+                p2HP.appendChild(document.createTextNode(player2HP + "/" + player2MaxHP));
+            }
+            
+            setTimeout(load, 200);
         </script>
     </head>
     <body>
@@ -84,16 +107,26 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-size: 40px; color: green;">
-                                    <img src="z/heart.jpg" height="35px" width="35px" />
-                                    <div id="player1HPId"></div><br/>
-                                    <img src="z/sword.jpg" height="35px" width="35px" />
-                                    <span style="color: red;">10-20</span>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>
-                                    <input id="attack1" type="button" value="Attack" onclick="player1Attack()" style="padding: 10px 15px; font-size: 32px; text-align: center;"/>
+                                    <table style="text-align: center; width: 375px;">
+                                        <tr>
+                                            <td style="font-size: 40px; color: green;">
+                                                <img src="z/heart.jpg" height="35px" width="35px" />
+                                                <div id="player1HPId">?</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size: 40px; color: red;">
+                                                <img src="z/sword.jpg" height="35px" width="35px" />
+                                                10-20<div id="player1HPMinDamageId"></div><div id="player1HPMaxDamageId"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width: 375px;">
+                                                <input id="attack1" type="button" value="Attack" onclick="player1Attack()" style="padding: 10px 15px; font-size: 32px; text-align: center;"/>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
                         </table>
@@ -107,12 +140,12 @@
                             </tr>
                             <tr>
                                 <td id="turn" style="color: red; font-size: 50px; text-align: center; border-collapse: separate; border: 1px solid black; background-color: yellow;">
-                                    Burger's Turn
+                                  
                                 </td>
                             </tr>
                             <tr>
                                 <td id="scrollScreen" style="font-size: 24px; vertical-align: top; border-collapse: separate; border: 1px solid black; text-align: left; height: 600px; background-color: black; color: white;">
-                                    attack attack attack
+                                    
                                 </td>
                             </tr>
                         </table>
@@ -130,16 +163,26 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-size: 40px; color: green;">
-                                    <img src="z/heart.jpg" height="35px" width="35px" />
-                                    <div id="player2HPId"></div><br/>
-                                    <img src="z/sword.jpg" height="35px" width="35px" />
-                                    <span style="color: red;">10-20</span>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>
-                                    <input id="attack2" type="button" value="Attack" onclick="player2Attack()" style="padding: 10px 15px; font-size: 32px; text-align: center;"/>
+                                    <table style="text-align: center; width: 375px;">
+                                        <tr>
+                                            <td style="font-size: 40px; color: green;">
+                                                <img src="z/heart.jpg" height="35px" width="35px" />
+                                                <div id="player2HPId">?</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size: 40px; color: red;">
+                                                <img src="z/sword.jpg" height="35px" width="35px" />
+                                                10-20<div id="player2HPMinDamageId"></div><div id="player2HPMaxDamageId"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width: 375px;">
+                                                <input id="attack2" type="button" value="Attack" onclick="player2Attack()" style="padding: 10px 15px; font-size: 32px; text-align: center;"/>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
                         </table>
