@@ -4,15 +4,13 @@
         var tailsCount = 0;
         function flip() {
             var numOfTimes = document.getElementById("howManyTimes").value;
-            var side;
+
             for(i=0; numOfTimes>i; i++) {
-                if(Math.random() < 0.5) {
+                var side = Math.random() < 0.5 ? "Heads" : "Tails";
+                if(Math.random() < 0.5)
                     headsCount++;
-                    side = "Heads";
-                } else {
+                else
                     tailsCount++;
-                    side = "Tails";
-                }
             }
             document.getElementById("pennyImage").src = side == "Heads" ? "b/heads.jpg" : "b/tails.jpg";
             document.getElementById("pennyText").textContent = side;
