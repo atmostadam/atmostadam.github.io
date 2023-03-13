@@ -1,20 +1,36 @@
 <head>
     <script>
+        var headsCount = 0;
+        var tailsCount = 0;
         function flip() {
-            if(Math.random() < 0.5) {
-                document.getElementById("pennyImage").src = "b/heads.jpg";
-                document.getElementById("pennyText").textContent = "Heads";
-            } else {
-                document.getElementById("pennyImage").src = "b/tails.jpg";
-                document.getElementById("pennyText").textContent = "Tails";
+            var numOfTimes = document.getElementById("howManyTimes").value;
+            var side;
+            for(i=0; numOfTimes>i; i++) {
+                if(Math.random() < 0.5) {
+                    headsCount++;
+                    side = "Heads";
+                } else {
+                    tailsCount++;
+                    side = "Tails";
+                }
             }
+            document.getElementById("pennyImage").src = side == "Heads" ? "b/heads.jpg" : "b/tails.jpg";
+            document.getElementById("pennyText").textContent = side;
+            document.getElementById("pennyText").style.color = side == "Heads" ? "green" : "red";
+            document.getElementById("headsCountId").textContent = "HEADS: " + headsCount + "(" + ((headsCount / (headsCount + tailsCount)) * 100) + "%)";
+            document.getElementById("tailsCountId").textContent = "TAILS: " + tailsCount + "(" + ((tailsCount / (tailsCount + headsCount)) * 100) + "%)";
+            document.getElementById("howManyTimes").value = numOfTimes;
         }
     </script>
 </head>
-<body style="text-align: center;">
-    <img id="pennyImage" src="b/heads.jpg" style="width: 400px; height: 400px;" />
-    <br/><br/>
-    <div id="pennyText" style="font-size: 60px; ">Heads</div>
-    <br/><br/>
-    <input id="flipButton" type="button" style="font-size: 80px; width: 400px; height: 100px;" onclick="flip()" value="FLIP" />
+<body>
+    <div style="margin: auto; width: 1000px">
+        <table style="table-layout: fixed; width: 1000px; font-size: 70px; font-family: Helvetica, sans-serif; align-content: center; text-align: center;">
+            <tr><td style="vertical-align: top; width:1000px; padding-top: 70px;" ><img id="pennyImage" src="b/heads.jpg" style="width: 400px; height: 400px;" /></td></tr>
+            <tr><td style="padding-top: 20px;"><div id="pennyText" style="font-size: 60px; color: green;">Heads</div></td></tr>
+            <tr><td style="padding-top: 20px;"><input id="flipButton" type="button" style="font-size: 80px; width: 400px; height: 100px;" onclick="flip()" value="FLIP" /></td></tr>
+            <tr><td style="padding-top: 20px;"><input id="howManyTimes" style="font-size: 24px;" value="1" /></div></td></tr>
+            <tr><td style="padding-top: 20px;"><div id="headsCountId" style="font-size: 30px;">Heads: 0 (50%)</div></td></tr>
+            <tr><td style="padding-top: 20px;"><div id="tailsCountId" style="font-size: 30px;">Tails: 0 (50%)</div></td></tr>
+    </table>
 </body>
