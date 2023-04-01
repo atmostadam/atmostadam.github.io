@@ -2,75 +2,30 @@
     <script>
         var money = 0;
         var numberOfLines = 0;
+
+        class Job {
+            constructor(title, imgSrcUrl, monthlyPay, yearlyBonus, promotionClicks, clickAction) {
+                this.title = title;
+                this.imgSrcUrl = imgSrcUrl;
+                this.monthlyPay = monthlyPay;
+                this.yearlyBonus = yearlyBonus;
+                this.promotionClicks = promotionClicks;
+                this.clickAction = clickAction;
+            }
+        }
+
+        let careerJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 1, "Start Career"),
+            new Job("Paper Boy", "dad/images/paperboy.jpg", 800, 5000, 30, "Deliver")];
+        var careerCurrentClicks = 0;
+
         var careerVisible = false;
         var secondJobVisible = false;
         var freelanceVisible = false;
-
-        /*
-        class Job {
-            constructor(name, imgSrcUrl, buttonText, minPay, maxPay, minClickPay, maxClickPay, payMessage, clickMessage) {
-                this.name;
-                this.imgSrcUrl;
-                this.buttonText;
-                this.minPay;
-                this.maxPay;
-                this.minClickPay;
-                this.maxClickPay;
-                this.payMessage;
-                this.clickMessage;
-            }
-
-            get name() {
-                return this.name;
-            }
-
-            get imgSrcUrl() {
-                return this.imgSrcUrl;
-            }
-
-            get buttonText() {
-                return this.buttonText;
-            }
-
-            get minPay() {
-                return this.minPay;
-            }
-
-            get maxPay() {
-                return this.maxPay;
-            }
-
-            get minClickPay() {
-                return this.minClickPay;
-            }
-
-            get maxClickPay() {
-                return this.maxClickPay;
-            }
-
-            get payMessage() {
-                return this.payMessage;
-            }
-
-            get clickMessage() {
-                return this.clickMessage;
-            }
-        }
-        */
-
-        //const careerJob = new Job("Paper Boy", "dad/images/paperboy.jpg", "Deliver", 400, 600, 150, 200, "Dad's hard work delivering papers has resulted in a bonus of $", "Dad's career employer for a Paper Boy job has just paid him his monthly check of $");
-
-        class Job {
-            constructor(name, imgSrcUrl) {
-                this.name = name;
-                this.imgSrcUrl = imgSrcUrl;
-            }
-        }
-
-        const careerJob = new Job("Paper Boy");
+        var careerClickable = true; 
+        var careerProgress = 0;
         var secondJob;
         var freelanceJob;
-
 
         function getRandomInt(min, max) {
             min = Math.ceil(min);
@@ -82,6 +37,55 @@
             money += 1;
             var moneyId = document.getElementById("moneyId");
             moneyId.innerText = "Money: $" + money;
+        }
+
+        function moveProgressBar() {
+            if (careerProgress == 0) {
+                careerProgress = 1;
+                var elem = document.getElementById("careerBar");
+                var width = careerProgress;
+                var id = setInterval(frame, 20);
+                function frame() {
+                    if (width >= 158) {
+                        clearInterval(id);
+                        careerProgress = 0;
+                        document.getElementById("careerButton").style.backgroundColor = "white";
+                        careerCurrentClicks++;
+                        if(careerCurrentClicks >= careerJobs[0].promotionClicks) {
+                            careerCurrentClicks = 0;
+                            careerJobs.shift();
+                            document.getElementById("careerButton").value = careerJobs[0].clickAction;
+                            document.getElementById("careerImage").src = careerJobs[0].imgSrcUrl;
+                            document.getElementById("careerPay").innerText = "$" + careerJobs[0].monthlyPay + " Per Month";
+                            document.getElementById("careerJobTitle").innerText = careerJobs[0].title;
+                            dadOut("Congratulations! You have been promoted to [" + careerJobs[0].title + "]", "green");
+                            dadOut("Your new monthly salary is [$" + careerJobs[0].monthlyPay + " Per Month]", "green");
+                            dadOut("You will get promoted again after [" + careerJobs[0].promotionClicks + " Clicks]", "green");
+                        }
+                        careerClickable = true;
+                    } else {
+                        width++;
+                        elem.style.width = width + "px";
+                    }
+                }
+            }
+        }
+
+        function dadOut(message, color) {
+            var scrollScreen = document.getElementById("scrollScreen");
+
+            var textNode = document.createTextNode(message);
+            textNode.style.color = color;
+
+            scrollScreen.appendChild(textNode);
+            scrollScreen.appendChild(document.createElement("br"));
+            
+            if(numberOfLines > 30) {
+                scrollScreen.removeChild(scrollScreen.firstChild);
+                scrollScreen.removeChild(scrollScreen.firstChild);
+            } else {
+                numberOfLines++;
+            }
         }
 
         function dadOut(message) {
@@ -115,9 +119,9 @@
             careerVisible = true;
             document.getElementById("career").style.display = "block";
             document.getElementById("money").style.display = "block";
-            document.getElementById("assets").style.display = "block";
-            document.getElementById("investments").style.display = "block";
-            document.getElementById("expenses").style.display = "block";
+            //document.getElementById("assets").style.display = "block";
+            //document.getElementById("investments").style.display = "block";
+            //document.getElementById("expenses").style.display = "block";
         }
 
         function pay(cash, message) {
@@ -127,6 +131,23 @@
             dadOut(message);
         }
 
+        function careerClick() {
+            if(!careerClickable) return;            
+            careerClickable = false;
+            pay(800, "Dad's career employer for a Paper Boy job has just paid him his monthly check of $800.");
+            document.getElementById("careerButton").style.backgroundColor = "darkgray";
+            moveProgressBar();
+        }
+
+        function secondJobClick() {
+
+        }
+
+        function freelanceClick() {
+
+        }
+
+
         function unhideCareerButton() {
             document.getElementById("careerButton").style.display = "block";
         }
@@ -135,6 +156,7 @@
             document.getElementById("careerButton").style.display = "none";
             pay(200, "Your hard work delivering papers has resulted in a bonus of $200.");
             setTimeout(unhideCareerButton, 3000);
+            moveProgressBar();
         }
 
         function unhideSecondJobButton() {
@@ -193,24 +215,24 @@
 
 
         /** Delays. */
-        setTimeout(sayDadWakes1, 1000); // 50
+        setTimeout(sayDadWakes1, 1000); // 1000
         setTimeout(sayDadWakes2, 5000); //5000
         setTimeout(sayDadWakes3, 10000); //10000
         setTimeout(dadNeedsMoney1, 15000); //15000
 
 
         /** Timers. */
-        setInterval(careerPayDay, 14000);
-        setInterval(secondJobPayDay, 30000);
-        setInterval(freelancePayDay, 7000);
-        setInterval(randomPayDay, 100000);
+        //setInterval(careerPayDay, 14000);
+        //setInterval(secondJobPayDay, 30000);
+        //setInterval(freelancePayDay, 7000);
+        setInterval(randomPayDay, 1000000);
     </script>
 </head>
 <body style="background-color: black; font-size: 22px; font-family: Helvetica, sans-serif; color: white; ">
     <div style="margin: auto; width: 1800px">
         <table style="table-layout: fixed; width: 1800px;">
             <tr>
-                <td style="align-content: left; text-align: left; width:375px; padding-right: 25px; color: magenta;" >
+                <td style="align-content: left; text-align: left; width:375px; padding-right: 25px; color: magenta; visibility: hidden;" >
                     25 Years Old Dad With 7 Kids
                 </td>
                 <td style="align-content: center; text-align: center; width: 950px" > 
@@ -218,7 +240,7 @@
                         Dad's World
                     </h1>
                 </td>
-                <td style="align-content: right; text-align: right; width:375px; padding-left: 25px; color: magenta;" > 
+                <td style="align-content: right; text-align: right; width:375px; padding-left: 25px; color: magenta; visibility: hidden;" > 
                     43 Years, 2 Months Remain.
                 </td>
             </tr>
@@ -229,15 +251,17 @@
                         <td style="padding-bottom: 30px; width:373px">
                             <table id="career" style="border-collapse: separate; border: 1px solid white; display: none; width:373px">
                                 <tr>
-                                    <td style="text-align: center; width: 300px; padding-left: 10px;" >
-                                        <span style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Paper Boy</span><br/>
-                                        <img src="dad/images/paperboy.jpg" height="125" width="125"><br/>
-                                        <span style="font-size: 16px; color: red; font-family: Arial, Helvetica, sans-serif;">Career</span>
+                                    <td style="text-align: center; width: 157px; padding-left: 10px; padding-right: 20px;" >
+                                        <span id="careerJobTitle" style="font-size: 24px; font-family: Arial, Helvetica, sans-serif;">Dad</span><br/>
+                                        <img id="careerImage" src="dad/images/questionmark.jpg" height="150" width="150"><br/>
+                                        <span style="font-size: 20px; color: red; font-family: Arial, Helvetica, sans-serif;">Career</span>
                                     </td>
-                                    <td style="text-align: center; width: 73px; padding-right: 40px;" >
-                                        <input id="careerButton" type="button" value="Deliver" onclick="paperBoyClick()" style="padding: 10px 15px; font-size: 32px; background-color: white; "/><br/>
-                                        <span style="font-size: 30px; color: green;">$800</span><br/>
-                                        <span style="font-size: 20px; color: green;">per month</span>
+                                    <td style="text-align: center; width: 146px; padding-right: 40px;" >
+                                        <input id="careerButton" type="button" value="Begin Career" onclick="careerClick()" style="padding: 10px 15px; font-size: 20px; background-color: white; width: 158px;"/><br/>
+                                        <div id="careerProgress" style="width: 158px; background-color: grey;">
+                                            <div id="careerBar" style="width: 1px; height: 10px; background-color: green;"></div>
+                                          </div>
+                                        <span id="careerPay" style="font-size: 20px; color: green;">$0 per month</span><br/>
                                     </td>
                                 </tr>
                             </table>
@@ -296,7 +320,7 @@
                                 </tr>
                             </table>
                             <br/>
-                            <table id="assets" style="border: 1px solid white; display: none; width: 375px;">
+                            <table id="assets" style="border: 1px solid white; display: none; width: 375px; visibility: hidden;">
                                 <tr>
                                     <td colspan="3" style="font-size: 22px; font-family: Helvetica, sans-serif; color: green; text-align: center; width: 375px;">
                                         Assets
@@ -319,7 +343,7 @@
                                 </tr>
                             </table>
                             <br/>
-                            <table id="investments" style="border: 1px solid white; display: none; width: 375px;">
+                            <table id="investments" style="border: 1px solid white; display: none; width: 375px; visibility: hidden;">
                                 <tr>
                                     <td colspan="3" style="font-size: 22px; font-family: Helvetica, sans-serif; color: green; text-align: center; width: 375px;">
                                         Investments
@@ -370,7 +394,7 @@
                                 </tr>
                             </table>
                             <br />
-                            <table id="expenses" style="border: 1px solid white; display: none; width: 375px;">
+                            <table id="expenses" style="border: 1px solid white; display: none; width: 375px; visibility: hidden;">
                                 <tr>
                                     <td colspan="2" style="font-size: 22px; font-family: Helvetica, sans-serif; color: red; text-align: center; width: 375px;">
                                         Expenses
