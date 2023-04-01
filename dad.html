@@ -1,14 +1,14 @@
 <head>
     <script>
         /** Lower is faster. */
-        const CAREER_PROGRESS_BAR_SPEED = 2;
+        const CAREER_PROGRESS_BAR_SPEED = 1;
         const SECOND_JOB_PROGRESS_BAR_SPEED = 10;
         const FREELANCE_JOB_PROGRESS_BAR_SPEED = 5;
 
-        const SAY_DAD_WAKES_1_INTERVAL = 1000; // 1000
-        const SAY_DAD_WAKES_2_INTERVAL = 2000; //5000
-        const SAY_DAD_WAKES_3_INTERVAL = 3000; //10000
-        const DAD_NEEDS_MONEY_1_INTERVAL = 4000; //15000
+        const SAY_DAD_WAKES_1_INTERVAL = 1; // 1000
+        const SAY_DAD_WAKES_2_INTERVAL = 1; //5000
+        const SAY_DAD_WAKES_3_INTERVAL = 1; //10000
+        const DAD_NEEDS_MONEY_1_INTERVAL = 1; //15000
         const RANDOM_PAY_DAY_INTERVAL = 200000; //200000
 
         const MAX_NUMBER_OF_LINES = 25;
@@ -60,10 +60,52 @@
             new Job("President of the United Stated", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
             new Job("President of the World", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision")];
 
-
         let careerJobs = [
             new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 1, "Start Career"),
-            new Job("IT Contractor", "dad/images/paperboy.jpg", 800, 0, 1, "Deliver")];
+            new Job("Walmart Bag Boy", "dad/images/associate.jpg", 1900, 0, 1, "Bag"),
+            new Job("Walmart Cart Boy", "dad/images/associate.jpg", 2100, 0, 1, "Cart"),
+            new Job("Walmart Cashier", "dad/images/associate.jpg", 2200, 0, 1, "Bag"),
+            new Job("Walmart Floor Associate", "dad/images/associate.jpg", 2200, 0, 1, "Bag"),
+            new Job("Walmart Stocker", "dad/images/associate.jpg", 2300, 0, 1, "Bag"),
+            new Job("Walmart Janitor", "dad/images/associate.jpg", 2400, 0, 1, "Bag"),
+            new Job("Walmart Security Specialist", "dad/images/associate.jpg", 2500, 0, 1, "Bag"),
+            new Job("Walmart Cashier Supervisor", "dad/images/associate.jpg", 2900, 0, 1, "Bag"),
+            new Job("Walmart Associate Supervisor", "dad/images/associate.jpg", 2900, 0, 1, "Bag"),
+            new Job("Walmart Department Assistant Manager", "dad/images/associate.jpg", 4000, 0, 1, "Bag"),
+            new Job("Walmart Department Manager", "dad/images/associate.jpg", 4500, 0, 1, "Bag"),
+            new Job("Walmart District Manager", "dad/images/associate.jpg", 11500, 0, 1, "Bag"),
+            new Job("Walmart Store Assistant Manager", "dad/images/associate.jpg", 14000, 0, 1, "Bag"),
+            new Job("Walmart Store Manager", "dad/images/associate.jpg", 16500, 0, 1, "Bag"),
+            new Job("Walmart Associatee Vice President", "dad/images/associate.jpg", 25000, 0, 1, "Bag"), // 300
+            new Job("Walmart Vice President", "dad/images/associate.jpg", 33000, 0, 1, "Bag"), //400
+            new Job("Walmart Sr Vice President", "dad/images/associate.jpg", 42000, 0, 1, "Bag"), //500
+            new Job("Walmart Chief Operating OFficer", "dad/images/associate.jpg", 258000, 0, 1, "Bag"),
+            new Job("Walmart Chief Executive OFficer", "dad/images/associate.jpg", 2000000, 0, 1, "Bag"),
+            new Job("Owner Entrepreneur", "dad/images/callcenter.jpg", 1000000, 0, 1, "Spend"),
+            new Job("Owner Chief Executive Officer", "dad/images/callcenter.jpg", 500000000, 0, 1, "Vision"),
+            new Job("Owner Executive Chairman of the Board", "dad/images/callcenter.jpg", 5000000000, 0, 1, "Vision"),
+            new Job("Philanthropist", "dad/images/callcenter.jpg", -500000000, 2000, 1, "Vision"),
+            new Job("President of the United States", "dad/images/callcenter.jpg", 33333, 0, 1, "Vision"),
+            new Job("President of the World", "dad/images/callcenter.jpg", 666666, 0, 1, "Vision"),
+            new Job("President of the World & Mars", "dad/images/associate.jpg", 666666, 0, 1, "Drive")];
+
+        let rachelCareerJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 1, "Start Career"),
+            new Job("Taxi Driver", "dad/images/taxidriver.jpg", 2900, 0, 1, "Drive"),
+            new Job("Roofer", "dad/images/roofer.jpg", 2900, 0, 1, "Tile"),
+            new Job("Logger", "dad/images/logger.jpg", 800, 0, 1, "Cut"),
+            new Job("Dog Trainer", "dad/images/dogtrainer.jpg", 800, 0, 1, "Train"),
+            new Job("Police Officer", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("Ice Cream Man", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, "")
+        ];
         var careerCurrentClicks = 0;
         var careerVisible = false;
         var careerClickable = true; 
