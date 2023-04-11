@@ -1,0 +1,218 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: black;
+                font-family: Helvetica, sans-serif;
+                color: white;
+                font-size: 22px;
+            }
+
+            .wrapper {
+                margin: auto;
+                width: 1800px;
+            }
+
+            table {
+                table-layout: fixed;
+                width: 1800px;
+            }
+
+            .lifespan {
+                align-content: left;
+                text-align: left;
+                width:375px;
+                padding-right: 25px;
+                color: magenta;
+            }
+
+            .leftColumnWidth {
+                vertical-align: top;
+                width:375px"
+            }
+
+            .leftColumnPaddingWidth {
+                padding-bottom: 30px;
+                width:373px"
+            }
+
+
+            
+            .cardTable {
+                border-collapse: separate;
+                border: 1px solid white;
+                width:373px;
+            }
+
+
+            .row {
+                margin: auto;
+                width: 100%;
+            }
+        
+            .leftcolumn {
+                float: left;
+                width: 25%;
+            }
+        
+            .centerColumn {
+                float: left;
+                width: 50%;
+            }
+        
+            .rightcolumn {
+                float: left;
+                width: 25%;
+            }
+            
+            /*
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            */
+        
+            .dadTitle {
+                font-size: 36px;
+            }
+
+            .lifeCounter {
+                text-align: center;
+                font-size: 24px;
+                width:25%
+            }
+
+            .careerCard {
+                width: 25%;
+            }
+
+            .leftColumnWidth {
+                width: 25%;
+            }
+
+            .careerCardLeft {
+                float: left;
+                width: 20%;
+            } 
+
+            .careerCardRight {
+                float: left;
+                width: 20%;
+            } 
+
+            .careerCardRow {
+                width: 25%;
+            }
+
+            /*
+            .scrollScreenCard {
+                border: 1px solid white; 
+            }
+            */
+        
+            @media screen and (max-width: 800px) {
+                .leftcolumn,
+                .centerColumn,
+                .rightcolumn {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <table>
+                <tr>
+                    <td class="lifespan">
+                        <div id="ageTimer">
+                            25 Years Old Dad With 7 Kids.
+                        </div> 
+                    </td>
+                    <td style="align-content: center; text-align: center; width: 950px" > 
+                        <h1 style="font-size: 40px">
+                            Dad's World
+                        </h1>
+                    </td>
+                    <td class="lifespan">
+                        <div id="deathTimer">
+                            60 Years, 0 Months Remain.
+                        </div>   
+                    </td>
+                </tr>
+                <tr>
+                <td class="leftColumnWidth">
+                    <table id="jobTable" class="leftColumnWidth">
+                        <tr>
+                            <td class="leftColumnPaddingWidth">
+                                <table id="career" class="cardTable">
+                                    <tr>
+                                        <td style="text-align: center; width: 157px; padding-left: 10px; padding-right: 20px;" >
+                                            <div id="careerJobTitle" style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; height: 55px;">Dad</div><br/>
+                                            <img id="careerImage" src="dad/images/questionmark.jpg" height="150" width="150"><br/>
+                                            <span style="font-size: 20px; color: red; font-family: Arial, Helvetica, sans-serif;">Career</span>
+                                        </td>
+                                        <td style="text-align: center; width: 146px; padding-right: 40px;" >
+                                            <input id="careerButton" type="button" value="Begin Career" onclick="careerClick()" style="padding: 10px 15px; font-size: 18px; background-color: white; width: 158px;"/><br/>
+                                            <div id="careerProgress" style="width: 158px; background-color: grey;">
+                                                <div id="careerBar" style="width: 1px; height: 10px; background-color: green;"></div>
+                                            </div>
+                                            <span id="careerPay" style="font-size: 20px; color: green;">$0 per month</span><br/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </td>
+                    </tr>
+                    </table>
+                    
+        </div>
+    </body>
+</html>
+                
+
+
+                <!--
+         
+        <div class="row">
+            <div class="leftColumn">
+                <div class="lifeCounter">
+                    27 Years Old
+                </div>
+
+                <div class="careerCard">
+                    <div id="careerJobTitle" class="leftColumnWidth">
+                        Dad
+                    </div>
+                    <div class="careerCardRow">
+                        <div class="careerCardLeft">
+                            <img id="careerImage" src="dad/images/questionmark.jpg" height="150" width="150">
+                        </div>
+                        <div class="careerCardRight">
+                            <input id="careerButton" type="button" value="Begin Career" onclick="careerClick()" style="padding: 10px 15px; font-size: 18px; background-color: white;"/>
+                            <div id="careerProgress" style="width: 158px; background-color: grey;">
+                                <div id="careerBar" style="width: 1px; height: 10px; background-color: green;"></div>
+                            </div>
+                            <div id="careerPay" style="font-size: 20px; color: green;">$0 per month</div>
+                        </div>
+                    </div>
+                    <div id="literalCareer" class="leftColumnWidth">
+                        Career
+                    </div>
+                </div>
+            </div>
+            <div class="centerColumn">
+                <div class="dadTitle">
+                    Dad's World
+                </div>
+            </div>
+            <div class="rightColumn">
+                <div class="lifeCounter">
+                    60 years left
+                </div>
+            </div>
+        </div>
+    -->
