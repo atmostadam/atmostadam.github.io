@@ -115,6 +115,7 @@ I use the following professionally on a daily basis:
 - RESTful Services
 - IBM AS400
 - Veracode
+- Jenkins
 - Sonarqube
 - PrismaCloud
 - Intellij (Primary), VS Code BPMN Plugin Kogito, Eclipse BPMN Plugin JBPM/Drools

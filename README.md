@@ -114,6 +114,7 @@ I use the following professionally on a daily basis:
 - Swagger
 - RESTful Services
 - IBM AS400
+- Jenkins
 - Veracode
 - Sonarqube
 - PrismaCloud
