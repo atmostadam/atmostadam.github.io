@@ -1,5 +1,21 @@
 [//]: # (Adam Johnston)
 
+# Table of Contents
+1. [Highlights](#highlights)
+2. [Code Showcase](#code-showcase)
+3. [Skillset](#skillset)
+4. [Career](#career)
+    1. [Experience](#experience)
+        1. [Lead Software Engineer](#lead-software-engineer)
+        2. [Sr. Software Engineer](#sr-software-engineer)
+        3. [IT Supervisor](#it-supervisor)
+        4. [IT Contractor](#it-contractor)
+    2. [Projects](#projects)
+    3. [Partner Integrations](#partner-integrations)
+5. [Education](#education)
+6. [Secondary Part-Time Business](#secondary-part-time-business)
+7. [Contact Information](#contact)
+
 # Highlights
 - Lead Software Engineer with 17 years of experience in the Telecommunications industry
 - A passion for developing complex enterprise applications on challenging projects using Java and Spring Boot technologies
@@ -18,13 +34,6 @@
 - Lead code review sessions and final code approver for pull requests before production
 - Responsible for launching strategic projects such as VoIP, 1GIG residential fiber optics
 - An honesty first approach including level setting expectations, fact-based estimation
-
-# Table of Contents
-1. [Code Showcase](#code-showcase)
-2. [Experience](#experience)
-    1. [Lead Software Engineer](#lead-software-engineer)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
 # Code Showcase
 <h3>
@@ -55,7 +64,7 @@
 - VoIP & Circuit Provisioning for Residential & Commercial (2005-present)
 - DOCSIS & Fiber Provisioning for Residential & Commercial (2005-present)
 
-## Sr. Software Engineer (3 Years) [Oct 2008 - Nov 2011]
+## Sr. Software Engineer (3 Years) [Oct 2008 - Nov 2011] <a name="sr-software-engineer"></a>
 - Troubleshot middleware workflow and web services production outages at the Unix application level to correct problems acting as top tier operations support for multiple servers and applications
 - Performed as a core team member of multiple simultaneous projects by acting as a telephony auto-provisioning operations subject matter expert for the Cisco BTS and Nortel CS2K products
 - Represented the production control team in each step of the Systems Development Life Cycle to insure operational needs are considered from development to production
@@ -75,7 +84,7 @@
 - Core Provisioning SDLC & Support (2005-present)
 - Genband VoIP CS2K Switch Upgrades (2005-2008)
 
-## IT Supervisor (2 Years) [Jul 2006 - Oct 2008]
+## IT Supervisor (2 Years) [Jul 2006 - Oct 2008] <a name="it-supervisor"></a>
 - Supervised the day to day Cox Digital Telephone and Cox High Speed Internet provisioning support to ensure outstanding service
 - Demonstrated leadership to the department by coaching, handling conflicts, managing a rotating schedule, creating documentation, and training local test desks
 - Generated reports and feedback to higher level management to provide information on performance, to show long term trends, and to recommend changes in strategy and methodology
@@ -92,23 +101,17 @@ Analyst I July 2006-July 2007
 - Successfully undertook leadership opportunities within the department including traveling to and teaching the local test desks and dispatch, creating solutions for advanced provisioning issues, and creating documentation for proper troubleshooting within the department
 - Gained daily experience searching UNIX log files to determine the root causes of provisioning issues
 
-## IT Contractor (1 Year) [Aug 2005 - Jul 2006]
+## IT Contractor (1 Year) [Aug 2005 - Jul 2006] <a name="it-contractor"></a>
 - Investigated and resolved errors that occurred during any step in the auto-provisioning process for Cox’s High Speed Internet and Telephone products using an end-to-end methodology to ensure data integrity from the time a work order is entered into the billing system until the technician receives dial tone or internet access at the customer’s house
 - Created various programs using advanced Outlook, Excel, and keyboard macros to improve the efficiency and reliability of troubleshooting in the auto-provisioning process while simultaneously decreasing ticket and transaction times
 - Gained daily experience searching UNIX log files to determine the root causes of provisioning issues
 - Trained and educated new employees and local test desks to ensure knowledgeable staff and to prevent errors in the overall provisioning process
 · Developed daily, weekly and monthly reports to show the number of tickets and trends in ticketing to be presented to determine the overall progress of the department
 
-# Education
-- University of Georgia, BBA in Management Information Systems [2002-2005]
-- Kennesaw State Univerity, Master of Science in Information Systems [2009-2011]
-- Kennesaw State Univerity, Master of Business Administration [2009-2011]
-
 # Projects
 - Approximately 100 different telecommunications projects over 17 years leading up to 8 projects at a time
 
 # Skillset
-
 I use the following professionally on a daily basis:
 - Java
 - Spring Boot
@@ -254,14 +257,19 @@ Names of systems that I have experience integrating with can be provided upon re
 - TMForum - Communications Service Provider Forum
 - Cable Labs - Cable Company R&D
 
+# Education
+- University of Georgia, BBA in Management Information Systems [2002-2005]
+- Kennesaw State Univerity, Master of Science in Information Systems [2009-2011]
+- Kennesaw State Univerity, Master of Business Administration [2009-2011]
+
 # Secondary Part-Time Business
 
 # Business Case
 Three pronged approach
 
-## Affiliate Marketing
+# Affiliate Marketing
 
-## Private Practice
+# Private Practice
 
 # Contact Information
 
