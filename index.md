@@ -19,6 +19,13 @@
 - Responsible for launching strategic projects such as VoIP, 1GIG residential fiber optics
 - An honesty first approach including level setting expectations, fact-based estimation
 
+# Table of Contents
+1. [Code Showcase](#code-showcase)
+2. [Experience](#experience)
+    1. [Lead Software Engineer](#lead-software-engineer)
+3. [Third Example](#third-example)
+4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+
 # Code Showcase
 <h3>
   <ul>
@@ -31,7 +38,8 @@
 </h3>
 
 # Experience
-## Lead Software Engineer (11+ Years) [Nov 2011 - Present]
+
+## Lead Software Engineer (11+ Years) [Nov 2011 - Present] <a name="lead-software-engineer"></a>
 - Develops advanced java-based applications using JEE technologies including EJB 3.x, dependency injection, datasources, JTA and JCA at the application and integration layers
 - Designs next generation Middleware and OSS applications such as customer self-activation, automated migrations, services provisioning and web services
 - Participates as a development lead engineer in each step of the SDLC to set up our development teams for success in resolving existing bugs and implementing enhancements or change requests
@@ -245,6 +253,15 @@ Names of systems that I have experience integrating with can be provided upon re
 - Incognito - DOCSIS & Cable Modems
 - TMForum - Communications Service Provider Forum
 - Cable Labs - Cable Company R&D
+
+# Secondary Part-Time Business
+
+# Business Case
+Three pronged approach
+
+## Affiliate Marketing
+
+## Private Practice
 
 # Contact Information
 
