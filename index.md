@@ -13,7 +13,13 @@
     2. [Projects](#projects)
     3. [Partner Integrations](#partner-integrations)
 5. [Education](#education)
-6. [Secondary Part-Time Business](#secondary-part-time-business)
+6. [Side Business](#side-business-internet-sales--lead-generation-2007-2011)
+    1. [Content Creation Strategies](#content-creation-strategies) 
+    2. [Marketing Strategies](#marketing-strategies)
+    3. [Affliate Sales Strategies](#affiliate-sales-strategy)
+    4. [Cost Per Click Sales Strategies](#cost-per-click-sales-strategy)
+    5. [Real Estate](#real-estate-private-practice-partnership-strategy)
+    6. [Closing Information](#closing-information)
 7. [Contact Information](#contact)
 
 # Highlights
@@ -45,6 +51,8 @@
     <li><a href="https://github.com/atmostadam/cats-jbpm">jBPM Repository</a></li>
   </ul>
 </h3>
+
+<a name="career"></a>
 
 # Experience
 
@@ -262,14 +270,46 @@ Names of systems that I have experience integrating with can be provided upon re
 - Kennesaw State Univerity, Master of Science in Information Systems [2009-2011]
 - Kennesaw State Univerity, Master of Business Administration [2009-2011]
 
-# Secondary Part-Time Business
+# Side Business: Internet Sales & Lead Generation (2007-2011)
+My business partner(s) and I took a 3 pronged approach to internet marketing using a variety of white-hat techniques to legitimately get our CPC, Affliate or Private Practice website(s) to the first page of Google and often position #1 for localized keywords. 
 
-# Business Case
-Three pronged approach
+## Content Creation Strategies
+- Reviewing process that specifically focused on information that could not be found on Amazon at that time when it was smaller. This would often include things like:
+  - Information from the Better Business Bureau
+  - Product recall information
+  - Company's history of quality
+  - Manufacturing location
+  - Production batch size
+  - Replaceable parts
+  - Aggregated reviews
+  - Product trials
+  - Many, many others
 
-# Affiliate Marketing
+## Marketing Strategies
+- Blogs
+- YouTube Videos
+- Press Releases
+- Search Engine Optimization
+- Focus on organic traffic
+- Answers sites on our targeted topics
+- Forums
+- Social Media
+- Keyword research starting at most specific and localized and moving towards more generic
 
-# Private Practice
+## Affiliate Sales Strategy
+- Amazon Affiliate Program: https://affiliate-program.amazon.com
+
+## Cost Per Click Sales Strategy
+- Google AdWords (Google Ads) https://ads.google.com
+
+## Real Estate Private Practice Partnership Strategy
+- Keller Williams Real Estate Michigan: https://michigan.kw.com
+
+## Closing Information
+- At time of dissolving the business, it was still making enough for one of us to have a middle income. However, the 3 of us were all investing in our future and all 3 agree we made the right move. There was so much invaluable information learned that the business as a learning experience was worth the amount of time we put into it.
+- A full time career, graduate school, this side business, an inhospitable business environment (States Sales Tax vs. Amazon) and a daughter on the way was too much so I left the business to the originating partner.
+- Our originating partner sold off the business in the mid-2010s to focus on his primary discipline, archeology.
+- Keller Williams sent a bunch of unexpected percentage-based fees that made Michigan's real estate business case no longer viable so our real estate agent partner decided to move onto other small business enterprises where he has done very well.
 
 # Contact Information
 
