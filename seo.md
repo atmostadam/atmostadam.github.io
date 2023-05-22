@@ -1,24 +1,25 @@
 [//]: # (Side Business: Internet Sales & Lead Generation)
 
-My business partner(s) and I took a 3 pronged approach to internet marketing using a variety of white-hat techniques to legitimately get our CPC, Affliate or Private Practice website(s) to the first page of Google and often position #1 for localized keywords.
+My business partner(s) and I took a 3 pronged approach to internet marketing using a variety of white-hat techniques to legitimately get our CPC, Affliate or Private Real Estate Practice website(s) to the first page of Google and often position #1 for localized keywords.
 
 # Read Me
-With great power comes great responsibility. Most internet marketers are shady characters that we must always avoid and never become. I very rarely share this information anymore because I have friends who went down paths such as:
+With great power comes great responsibility. Most internet marketers are shady characters that we must always avoid and never become.
 
 - Burying criminal records
 - Review bombing
 - Manipulating google algorithms
 - Posting false information (libel, defamation of character, etc.)
 - Dumping negative backlinks on competitors
-- Bulk content submission and bots [tbh may have contributed]
+- Bulk content submission and bots for ourselves or against others
 - Keyword stuffing
 
 This could happen to you. Be warned.
 
 # Lesson Learned
-- We should have all taken a salary before net income payouts.
+- We should have taken a consistent montly paycheck before net income payouts
 - We should have hired an accountant and/or tax lawyer
-- We also strongly recommend purchasing small business insurance
+- We should have taken small business insurance
+- We should have used friends and family in high school and college as content creators instead of international outsourcing.
 
 # Techniques
 ## Affiliate Sales
@@ -35,7 +36,7 @@ This could happen to you. Be warned.
 - For our real estate small business we also put out ads (free Google Ads Promotions where possible) to calculate our lead conversion.
 
 # How to backlink
-- Most backlinks that I used had keywords withing the a href element. However, one of my partners made the title of a blog post page the keyword with a link directly to that blog post
+- Most backlinks that we used had keywords within the a href element. However, one of our partners made the title of a blog post page the keyword with a link directly to that blog post
 - Link with URL Text
     - Social media and directories only allows these type of back links
     - Ex: <a href="https://www.dehumidifierreviews.com">https://www.dehumidifierreviews.com</a>
@@ -53,7 +54,7 @@ This could happen to you. Be warned.
 - https://www.freelancer.com/
     - Inexpensive India Resources were not effective
     - Master's Degree English-Native resources were acceptable, but very expensive
-- Nieces, Nephews, Cousins, Friends, Family, etc: This was especially true for those willing to work just above minimum wage remotely as an after school job for high school and college.
+- MUCH BETTER: Nieces, Nephews, Cousins, Friends, Family, etc: This was especially true for those willing to work just above minimum wage remotely as an after school job for high school and college.
 
 # Content on Our Websites
 ## Images
@@ -68,15 +69,18 @@ There was a disagreement among the partners in this area. I was able to get a ni
 
 ## Webpage Content or Blog
 We used a blog on our own site for posting content related to keywords generally 100 to 1k per month with slugs always reflecting lowercase keyword with - between each word.
-    - Ex: <a href="https://www.dehumidifierreviews.com/dehumidifier-reviews-for-flooded-basements">Dehumidifier Reviews for Flooded Basements</a>
 
-## Hosting
-### Wordpress
-Recommended
+- Ex: <a href="https://www.dehumidifierreviews.com/dehumidifier-reviews-for-flooded-basements">Dehumidifier Reviews for Flooded Basements</a>
+
+Posting content on our actual business page itself was critical. We had launched some websites with 10 pages of content, but by the time we shut down the business most sites had between 200 and 1000 pages and/or blog posts.
+
+# Hosting
+## Wordpress
+Highly Recommended
 - https://wordpress.com/
 
-### Hostgator
-I wish I would have stuck with wordpress the whole time. Managing html or javascript directly was pointless when I could have had wordpress do it for me.
+## Hostgator
+We wish we would have stuck with wordpress the whole time. Managing html or javascript directly was pointless when we could have had wordpress do it for us.
 - https://www.hostgator.com/
 
 # Backlink Strategies
@@ -89,23 +93,35 @@ Our experience showed this to be the most effective. This is especially true whe
 - https://www.prnewswire.com/
 - Many others we never got a chance to try...
 
-## Reviews
+## Customer Reviews
 Our experience showed this to be most effective for our release estate agent:
-- Google Reviews (https://maps.google.com)
+- https://maps.google.com (Google Reviews Section)
 - https://yelp.com
+- https://www.bbb.org/
+- https://business.foursquare.com/
+- https://www.manta.com/
 
-## Industry Specific Reviews & Directories
+## Industry Specific Customer Reviews
 - https://www.ratemyagent.com/
 - https://www.zillow.com/
+- https://www.homelight.com/
+- There are many other real estate agent review sites and we tried to hit most of them
+
+## Business Social Media
+For our real estate agent, we created a personal page for the agent and a business page for the LLC.
+- https://www.google.com/business/
+- https://www.facebook.com/business/help
 
 ## Social Media
-Our experience showed this to be most effective for our release estate agent:
+For our real estate agent, we created a personal page for the agent and a business page for the LLC.
 - https://www.linkedin.com/
 - https://www.facebook.com/
+- https://pinterest.com
 
 ## Videos
 Creation of videos with links embedded within them
 - https://www.youtube.com/
+- https://www.tiktok.com/
 
 ## Create On-Topic Websites
 - https://wordpress.com/
@@ -120,21 +136,12 @@ Creation of videos with links embedded within them
 - Many others we never got a chance to try...
 
 ## Forums
-- 
+- https://www.reddit.com/
 
 ## Blogs
 - https://blog.hubspot.com/
 
-
-## Comments Section
-- 
-
-# Affiliate Specific
-
-## Individual Sales Specific
-- Reviewing process that specifically focused on information that could not be found on Amazon at that time when it was smaller. This would often include things like:
-
-# Affiliate Product Sales
+# Affiliate Specifics
   - Information from the Better Business Bureau
   - Product recall information
   - Company's history of quality
