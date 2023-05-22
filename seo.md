@@ -36,24 +36,51 @@ This could happen to you. Be warned.
 
 # How to backlink
 - Most backlinks that I used had keywords withing the a href element. However, one of my partners made the title of a blog post page the keyword with a link directly to that blog post
+- Link with URL Text
+    - Social media and directories only allows these type of back links
+    - Ex: <a href="https://www.dehumidifierreviews.com">https://www.dehumidifierreviews.com</a>
+    - Ex: <a href="https://www.dehumidifierreviews.com">https://dehumidifierreviews.com</a>
+    - Ex: <a href="https://www.dehumidifierreviews.com">www.dehumidifierreviews.com</a>
+    - Ex: <a href="https://www.dehumidifierreviews.com">dehumidifierreviews.com</a>
+- Link with Page Title Text
+    - This was my preference for increasing the ranking of my primary website
+    - Ex: <a href="https://www.dehumidifierreviews.com">Dehumidifier Reviews</a>
+- Link with Targeted Keyword Text
+    - This was my preference for increasing the ranking of more specific keywords
+    - Ex: <a href="https://www.dehumidifierreviews.com">Dehumidifier Reviews for Flooded Basements</a>
+
+# Building a Team
+- https://www.freelancer.com/
+    - Inexpensive India Resources were not effective
+    - Master's Degree English-Native resources were acceptable, but very expensive
+- Nieces, Nephews, Cousins, Friends, Family, etc: This was especially true for those willing to work just above minimum wage remotely as an after school job for high school and college.
 
 # Content on Our Websites
 ## Images
 Although our team did not have a graphic designer we created our own images, took our own pictures and licensed images from image companies. We found that purchaising images were the best for lead generation/conversion and did not notice an SEO impact. However, Google may find duplication on images purchased from a 3rd party.
 
+Purchasing images worked well for improving conversion rates
+
 - https://www.shutterstock.com/
 
 ## Videos
-There was a disagreement among the partners in this area. Some of us thought that embedding a YouTube link was sufficient whereas 
+There was a disagreement among the partners in this area. I was able to get a nice boost on my review sites whereas the other industries did not seem to make a difference. Videos posted on our website versuss the power of a YouTube backlink has yet to be tested.
 
+## Webpage Content or Blog
+We used a blog on our own site for posting content related to keywords generally 100 to 1k per month with slugs always reflecting lowercase keyword with - between each word.
+    - Ex: <a href="https://www.dehumidifierreviews.com/dehumidifier-reviews-for-flooded-basements">Dehumidifier Reviews for Flooded Basements</a>
 
-## Blog
+## Hosting
+### Wordpress
+Recommended
+- https://wordpress.com/
 
+### Hostgator
+I wish I would have stuck with wordpress the whole time. Managing html or javascript directly was pointless when I could have had wordpress do it for me.
+- https://www.hostgator.com/
 
-
-
-# Marketing Strategies
-In order of effectiveness that we found.  RESULTS WILL VARY!  Google's algorithm changes multiple times per day and it has been a few years.
+# Backlink Strategies
+ALWAYS include a backlink in your post, page or profile.  This is in order of effectiveness that we found.  RESULTS WILL VARY!  Google's algorithm changes multiple times per day and it has been a few years.
 
 ## Press Releases 
 Our experience showed this to be the most effective. This is especially true when one of our articles got syndicated to a variety of legitimate newspapers and news websites that we were actually familiar with.
@@ -62,24 +89,47 @@ Our experience showed this to be the most effective. This is especially true whe
 - https://www.prnewswire.com/
 - Many others we never got a chance to try...
 
+## Reviews
+Our experience showed this to be most effective for our release estate agent:
+- Google Reviews (https://maps.google.com)
+- https://yelp.com
+
+## Industry Specific Reviews & Directories
+- https://www.ratemyagent.com/
+- https://www.zillow.com/
+
+## Social Media
+Our experience showed this to be most effective for our release estate agent:
+- https://www.linkedin.com/
+- https://www.facebook.com/
+
 ## Videos
 Creation of videos with links embedded within them
+- https://www.youtube.com/
+
+## Create On-Topic Websites
+- https://wordpress.com/
+
+## How To
+- https://www.wikihow.com/
+
+## Answers
+- https://www.quora.com/
+- https://www.answers.com/
+- https://www.answerbag.com/
+- Many others we never got a chance to try...
+
+## Forums
+- 
+
+## Blogs
+- https://blog.hubspot.com/
 
 
+## Comments Section
+- 
 
-- Blogs
-- YouTube Videos
-
-- Search Engine Optimization
-- Focus on organic traffic
-- Answers sites on our targeted topics
-- Reviews
-- Forums
-- Social Media
-- Keyword research starting at most specific and localized and moving towards more generic
-
-
-## Affiliate Specific
+# Affiliate Specific
 
 ## Individual Sales Specific
 - Reviewing process that specifically focused on information that could not be found on Amazon at that time when it was smaller. This would often include things like:
@@ -94,10 +144,6 @@ Creation of videos with links embedded within them
   - Aggregated reviews
   - Product trials
   - Many, many others
-
-
-
-
 
 ## Closing Information
 - At time of dissolving the business, it was still making enough for one of us to have a middle income. However, the 3 of us were all investing in our future and all 3 agree we made the right move. There was so much invaluable information learned that the business as a learning experience was worth the amount of time we put into it.
