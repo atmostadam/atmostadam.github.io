@@ -13,14 +13,7 @@
     2. [Projects](#projects)
     3. [Partner Integrations](#partner-integrations)
 5. [Education](#education)
-6. [Side Business](#side-business-internet-sales--lead-generation-2007-2011)
-    1. [Content Creation Strategies](#content-creation-strategies) 
-    2. [Marketing Strategies](#marketing-strategies)
-    3. [Affliate Sales Strategies](#affiliate-sales-strategy)
-    4. [Cost Per Click Sales Strategies](#cost-per-click-sales-strategy)
-    5. [Real Estate](#real-estate-private-practice-partnership-strategy)
-    6. [Closing Information](#closing-information)
-7. [Contact Information](#contact)
+6. [Contact Information](#contact)
 
 # Highlights
 - Lead Software Engineer with 17 years of experience in the Telecommunications industry
