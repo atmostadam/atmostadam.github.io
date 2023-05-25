@@ -208,8 +208,10 @@
             new Job("President of the World", "dad/images/callcenter.jpg", 666666, 0, 1, "Change"),
             new Job("President of the World & Mars", "dad/images/associate.jpg", 666666, 0, 1, "Change")];
 
-        let careerJobs = [
-            //new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 0, 0, 0, 1, "Start Career"),
+            let careerJobs = [ new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 0, 0, 0, 1, "Start Career") ];
+
+        /*let careerJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 0, 0, 0, 1, "Start Career"),
             //new Job("Elementary School Cat Owner", "dad/images/catowner.jpg", 0, 0, 0, 0, 0, 5, "Volunteer", "The first step to starting a career working with cats is to get your own!"),
             //new Job("Middle School Kitten Foster", "dad/images/catfoster.jpg", 0, 0, 0, 0, 0, 3, "Volunteer", "Fostering is a volunteering opportunity when a family takes a cat into their home for a short time before adopting out to a permanent owner."),
             //new Job("High School Cat Charity Volunteer", "dad/images/hsvolunteer.jpg", 0, 0, 0, 0, 0, 4, "Volunteer", "Starting in high school once reaching the appropriate age for legal protection, local cat rescue organizations allow volunteers to help take care of the cats by doing things like feeding, watering, cleaning litterboxes, grooming and others.  Colleges love to see charity work on their applications!"),
@@ -227,6 +229,27 @@
             new Job("Cat Research Department Chair", "dad/images/chair.jpg", 300000, 0, 0, 0, 0, 5, "Sit"),
             new Job("Dean of Cat Research", "dad/images/dean.jpg", 500000, 0, 0, 0, 0, 10, "Sit"),
             new Job("Purrrrrresident of Cat Research", "dad/images/president.jpg", 1000000, 0, 0, 0, 0, 100, "Sit")];
+            */
+
+        let catResearcherJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 0, 0, 0, 1, "Start Career"),
+            //new Job("Elementary School Cat Owner", "dad/images/catowner.jpg", 0, 0, 0, 0, 0, 5, "Volunteer", "The first step to starting a career working with cats is to get your own!"),
+            //new Job("Middle School Kitten Foster", "dad/images/catfoster.jpg", 0, 0, 0, 0, 0, 3, "Volunteer", "Fostering is a volunteering opportunity when a family takes a cat into their home for a short time before adopting out to a permanent owner."),
+            //new Job("High School Cat Charity Volunteer", "dad/images/hsvolunteer.jpg", 0, 0, 0, 0, 0, 4, "Volunteer", "Starting in high school once reaching the appropriate age for legal protection, local cat rescue organizations allow volunteers to help take care of the cats by doing things like feeding, watering, cleaning litterboxes, grooming and others.  Colleges love to see charity work on their applications!"),
+            //new Job("Undergraduate Cat Charity Volunteer", "dad/images/undergradcat.jpg", 0, 0, 0, 0, 0, 4, "Volunteer"),
+            new Job("Cat Researcher Intern", "dad/images/catintern.jpg", 15000, 0, 0, 0, 0, 4, "Assist", "Although most internships are unpaid, your industry leading skills that you have learned at the University of Georgia have earned you an internship that will pay $15,000 this year."),
+            new Job("Graduate Cat Researcher", "dad/images/catgrad.jpg", 30000, 0, 0, 0, 0, 3, "Assist", "As a teacher's assistant in cat research, the University of Georgia provides you a small salary and pays your tuition."),
+            new Job("Associate Cat Researcher", "dad/images/assocresearcher.jpg", 30000, 0, 0, 0, 0, 3, "Research"),
+            new Job("Cat Researcher", "dad/images/researcher.jpg", 45000, 0, 0, 0, 0, 3, "Research"),
+            new Job("Sr. Cat Researcher", "dad/images/srresearcher.jpg", 60000, 0, 0, 0, 0, 3, "Research"),
+            new Job("Adjunct Professor of Cat Research", "dad/images/adjunct.jpg", 60000, 0, 0, 0, 0, 1, "Sit"),
+            new Job("Assistant Professor of Cat Research", "dad/images/assoc.jpg", 100000, 0, 0, 0, 0, 5, "Sit"),
+            new Job("Professor of Cat Research", "dad/images/professor.jpg", 150000, 0, 0, 0, 0, 5, "Sit"),
+            new Job("Tenured Professor of Cat Research", "dad/images/srprofessor.jpg", 200000, 0, 0, 0, 0, 10, "Sit"),
+            new Job("Professorial Fellow of Cat Research", "dad/images/fellow.jpg", 300000, 0, 0, 0, 0, 10, "Sit"),
+            new Job("Cat Research Department Chair", "dad/images/chair.jpg", 300000, 0, 0, 0, 0, 5, "Sit"),
+            new Job("Dean of Cat Research", "dad/images/dean.jpg", 500000, 0, 0, 0, 0, 10, "Sit"),
+            new Job("Purrrrrresident of Cat Research", "dad/images/president.jpg", 1000000, 0, 0, 0, 0, 100, "Preside")];
             /*
         var careerCurrentClicks = 0;
         var careerVisible = false;
@@ -389,6 +412,9 @@
             newDiv.style.color = messageColor;
             newDiv.style.width = "950px";
 
+            if("" != message) {
+                console.log(message);
+            }
             var newText = document.createTextNode(message);
             newDiv.appendChild(newText);
 
@@ -402,12 +428,14 @@
         }
 
 
+        /*
         function dadNeedsMoney1() {
             dadOut("You borrow one of your kid's bikes and start working so you can get money.", "white");
             careerVisible = true;
             document.getElementById("career").style.display = "block";
             document.getElementById("money").style.display = "block";
         }
+        */
 
         function pay(cash, message) {
             money += cash;
@@ -417,19 +445,12 @@
         }
 
         function payCheck() {
-            if (careerJobs.length == 0) {
-                throw Error("The List of Job has an array out of bounds error with a length of 0.");
-            }
             pay(careerJobs[0].pay, "Your career as a " + careerJobs[0].title + " pays your yearly salary of $" + careerJobs[0].pay);
         }
 
         function incrementYear() {
             yearsOld++;
             dadOut("Happy " + yearsOld + " Birthday!", "magenta");
-        }
-
-        function endGame() {
-            dadOut("Game is Over", "green");
         }
 
         function investmentReturns() {
@@ -453,20 +474,25 @@
             document.getElementById("careerPay").innerText = "$" + careerJobs[0].pay;
             document.getElementById("careerJobTitle").innerText = careerJobs[0].title;
             
-            dadOut("", "white");
-            dadOut("", "white");
+            dadOut("\r", "white");
+            dadOut("\r", "white");
             dadOut("Congratulations! You have been promoted to [" + careerJobs[0].title + "]", "green", careerJobs[0].imgSrcUrl);
             dadOut("Your new salary is $" + careerJobs[0].pay + " Per Year", "green");
             dadOut("Your bonus can be between $" + careerJobs[0].bonusMin + "and $" + careerJobs[0].bonusMax + " Per Year", "green");
-
-            careerJobs.shift();
+            if (careerJobs.length > 1) {
+                careerJobs.shift();
+            }
         }
 
-        function careerClick() {
+        function clearSS() {
             var scrollScreen = document.getElementById("scrollScreen");            
             while (scrollScreen.hasChildNodes()) {
                 scrollScreen.firstChild.remove();
             }
+        }
+
+        function careerClick() {
+            clearSS();
             payCheck();
             incrementYear();
             if(yearsOld >= 100) {
@@ -481,6 +507,7 @@
             }
         }
 
+        /*
         function sayDadWakes1() {
             dadOut("You feel a soft nudging on your shoulder that quickly turns into an aggressive poking as you hear a child's voice say, \"Daddy, are you getting up today?\"", "white");
         }
@@ -493,10 +520,12 @@
             dadOut("You take a quick shower and shave your face as fast as you can.", "white");
         }
 
-        setTimeout(sayDadWakes1, SAY_DAD_WAKES_1_INTERVAL); // 1000
-        setTimeout(sayDadWakes2, SAY_DAD_WAKES_2_INTERVAL); //5000
-        setTimeout(sayDadWakes3, SAY_DAD_WAKES_3_INTERVAL); //10000
-        setTimeout(dadNeedsMoney1, DAD_NEEDS_MONEY_1_INTERVAL); //15000
+        */
+
+        // setTimeout(sayDadWakes1, SAY_DAD_WAKES_1_INTERVAL); // 1000
+        // setTimeout(sayDadWakes2, SAY_DAD_WAKES_2_INTERVAL); //5000
+        // setTimeout(sayDadWakes3, SAY_DAD_WAKES_3_INTERVAL); //10000
+        // setTimeout(dadNeedsMoney1, DAD_NEEDS_MONEY_1_INTERVAL); //15000
 
         function randomPayDay() {
             pay(50000, "$50000 randomly appears in your bank account.");
@@ -559,9 +588,21 @@
         }
         */
         
+        function rachelClick() {
+            console.log("Rachel Button has been clicked!");
+            careerJobs = careerJobs.concat(catResearcherJobs);
+            document.getElementById("rachelButton").style.display = "none";
+            document.getElementById("careerPathTitle").style.display = "none";
+            dadOut("You have chosen Rachel's career path! Click Begin Career to get started!", "Magenta");
+            careerJobs.forEach(e => console.log(e.title))
+        }
 
+        function endTheGame() {
+            clearSS();
+            dadOut("You Win!", "Magenta");
+        }
 
-
+        console.log("Web page loaded successfully!")
     </script>
 </head>
 <body>
@@ -688,12 +729,15 @@
                 </table>
             </td>
             <td style="border: 1px solid white; font-size: 16px; font-family: Verdana, sans-serif; width: 950px; display: block; height: 800px; overflow: auto;">
-                <div id="careerPath" style="text-align: center; display: none; width: 950px;">
+                <div id="careerPath" style="float: left; width: 950px;">
                     <div id="careerPathTitle" style="font-size: 26px; font-family: Verdana, sans-serif; width: 950px;">Career Path</div>
+                    <div id="rachelDiv" style="padding: 25px 50px; float: left;"><input type="button" id="rachelButton" value="Rachel" onclick="rachelClick()" style="padding: 25px 50px; font-size: 32px; background-color: white;" /></div>
+                    <!--
                     <div id="dadDiv" style="padding: 25px 50px; float: left;"><input type="button" id="dadButton" value="Dad" onclick="dadClick()" style="padding: 25px 50px; font-size: 32px; background-color: white;" /></div>
                     <div id="rachelDiv" style="padding: 25px 50px; float: left;"><input type="button" id="rachelButton" value="Rachel" onclick="rachelClick()" style="padding: 25px 50px; font-size: 32px; background-color: white;" /></div>
                     <div id="walmartDiv" style="padding: 25px 50px; float: left;"><input type="button" id="walmartButton" value="Walmart" onclick="walmartClick()" style="padding: 25px 50px; font-size: 32px; background-color: white;" /></div>
-                    <div id="navyDiv" style="padding: 25px 50px;"><input type="button" id="navyButton" value="Navy" onclick="navyClick()" style="padding: 25px 50px; font-size: 32px; background-color: white;" /></div>
+                    <div id="armyyDiv" style="padding: 25px 50px;"><input type="button" id="armyButton" value="Military" onclick="militaryClick()" style="padding: 25px 50px; font-size: 32px; background-color: white;" /></div>
+                    -->
                 </div>
                 <div id="scrollScreen"></div>
             </td>
@@ -701,7 +745,7 @@
                 <table id="inventoryTable">
                     <tr>
                         <td style="vertical-align: top; text-align: left; width: 375px;">
-                            <table id="money" style="border: 1px solid white; display: none; width: 375px;">
+                            <table id="money" style="border: 1px solid white; width: 375px;">
                                 <tr>
                                     <td style="padding: 5px; font-size: 26px; color: green;">
                                         <div id="moneyId">0</div><script type="text/javascript">loadMoneyId()</script>
