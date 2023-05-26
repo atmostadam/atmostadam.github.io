@@ -1,0 +1,194 @@
+<html>
+    <head>
+        <script>
+            var player1HP = 120;
+            var player2HP = 120;
+
+            var player1MaxHP = 120;
+            var player2MaxHP = 120;
+
+            var player1MinDamage = 10;
+            var player1MaxDamage = 20;
+
+            var player2MinDamage = 10;
+            var player2MaxDamage = 20;
+
+            var numberOfLines = 0;
+
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+
+            function dadOut(message) {
+                var scrollScreen = document.getElementById("scrollScreen");
+                
+                scrollScreen.appendChild(document.createTextNode(message));
+                scrollScreen.appendChild(document.createElement("br"));
+                if(numberOfLines > 30) {
+                    scrollScreen.removeChild(scrollScreen.firstChild);
+                    scrollScreen.removeChild(scrollScreen.firstChild);
+                } else {
+                    numberOfLines++;
+                }
+            }
+
+            function player1Attack() {
+                document.getElementById("attack1").style.display = "none";
+                var damage = getRandomInt(player1MinDamage, player1MaxDamage);
+                player2HP = player2HP - damage;
+                dadOut("Burger hit Fries for " + damage + " damage!");
+                document.getElementById("player2HPId").textContent = player2HP + "/" + player2MaxHP;
+                if(player2HP < 1) {
+                    document.getElementById("attack1").style.display = "none";
+                    document.getElementById("attack2").style.display = "none";
+                    dadOut("CONGRATS! Burger has won the game!");
+                } else {
+                    document.getElementById("attack2").style.display = "block";
+                    var turn = document.getElementById("turn");
+                    turn.removeChild(turn.firstChild);
+                    turn.appendChild(document.createTextNode("Fries's Turn"));
+                }
+            }
+
+            function player2Attack() {
+                document.getElementById("attack2").style.display = "none";
+                var damage = getRandomInt(player1MinDamage, player1MaxDamage);
+                player1HP = player1HP - damage;
+                dadOut("Fries hit Burger for " + damage + " damage!");
+                document.getElementById("player1HPId").textContent = player1HP + "/" + player1MaxHP;
+                if(player1HP < 1) {
+                    document.getElementById("attack1").style.display = "none";
+                    document.getElementById("attack2").style.display = "none";
+                    dadOut("CONGRATS! Fries has won the game!");
+                } else {
+                    document.getElementById("attack1").style.display = "block";
+                    var turn = document.getElementById("turn");
+                    turn.removeChild(turn.firstChild);
+                    turn.appendChild(document.createTextNode("Burger's Turn"));
+                }
+            }
+
+            function load() {
+                dadOut("Welcome to the battle of Burger vs Fries!");
+                dadOut("Burger or Fries?");
+
+                var turn = document.getElementById("turn");
+                turn.removeChild(turn.firstChild);
+                turn.appendChild(document.createTextNode("Will you choose Burger or Fries?"));
+
+                var p1HP = document.getElementById("player1HPId");
+                p1HP.removeChild(p1HP.firstChild);
+                p1HP.appendChild(document.createTextNode(player1HP + "/" + player1MaxHP));
+
+                var p2HP = document.getElementById("player2HPId");
+                p1HP.removeChild(p2HP.firstChild);
+                p2HP.appendChild(document.createTextNode(player2HP + "/" + player2MaxHP));
+            }
+            
+            setTimeout(load, 200);
+        </script>
+    </head>
+    <body>
+        <div style="margin: auto; width: 1800px">
+            <table style="table-layout: fixed; width: 1800px; font-size: 26px; font-family: Helvetica, sans-serif; align-content: center; text-align: center; ">
+                <tr>
+                    <td style="vertical-align: top; width:375px; padding-right: 25px; padding-top: 70px;" >
+                        <table style="text-align: center; border-collapse: separate; border: 1px solid black;">
+                            <tr>
+                                <td style="font-size: 55px; color: blue; text-decoration: underline;">
+                                    Burger
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="z/burger.jpg" height="300px" width="300px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table style="text-align: center; width: 375px;">
+                                        <tr>
+                                            <td style="font-size: 40px; color: green;">
+                                                <img src="z/heart.jpg" height="35px" width="35px" />
+                                                <div id="player1HPId">?</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size: 40px; color: red;">
+                                                <img src="z/sword.jpg" height="35px" width="35px" />
+                                                10-20<div id="player1HPMinDamageId"></div><div id="player1HPMaxDamageId"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width: 375px;">
+                                                <input id="attack1" type="button" value="Attack" onclick="player1Attack()" style="padding: 10px 15px; font-size: 32px; text-align: center;"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="vertical-align: top; width: 950px; height: 600px; overflow: auto;">
+                        <table style="width: 950px">
+                            <tr>
+                                <td style="font-size:60px; text-align: center;">
+                                    Fast Food Battle
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="turn" style="color: red; font-size: 50px; text-align: center; border-collapse: separate; border: 1px solid black; background-color: yellow;">
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="scrollScreen" style="font-size: 24px; vertical-align: top; border-collapse: separate; border: 1px solid black; text-align: left; height: 600px; background-color: black; color: white;">
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="vertical-align: top; width:375px; padding-left: 25px; padding-top: 70px;" >
+                        <table style="text-align: center; border-collapse: separate; border: 1px solid black;">
+                            <tr>
+                                <td style="font-size: 55px; color: purple; text-decoration: underline;">
+                                    Fries
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="z/fries.jpg" height="300px" width="300px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table style="text-align: center; width: 375px;">
+                                        <tr>
+                                            <td style="font-size: 40px; color: green;">
+                                                <img src="z/heart.jpg" height="35px" width="35px" />
+                                                <div id="player2HPId">?</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size: 40px; color: red;">
+                                                <img src="z/sword.jpg" height="35px" width="35px" />
+                                                10-20<div id="player2HPMinDamageId"></div><div id="player2HPMaxDamageId"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width: 375px;">
+                                                <input id="attack2" type="button" value="Attack" onclick="player2Attack()" style="padding: 10px 15px; font-size: 32px; text-align: center;"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
