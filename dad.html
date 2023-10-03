@@ -70,6 +70,7 @@
         var money = 30000;
         var snp500Shares = 0;
         var nyseShares = 0;
+        var houseValue = 100000;
 
         // Liabilities
         var loan = 0;
@@ -93,8 +94,8 @@
         
 
         var numberOfLines = 0;
-        var yearsOld = 18;
-        var ageForPromotion = 18;
+        var yearsOld = 17;
+        var ageForPromotion = 17;
         var numberOfKids = 0;
 
         var snp500Shares = 0;
@@ -262,17 +263,17 @@
         }
 
         function dadOut(message, messageColor, imageSrc, messageFontSize) {
-            message = message ? message : " ";
-            messageColor = message ? messageColor : "white";
-            messageFontSize = messageFontSize ? messageFontSize : "20px";
+            message = message ? message : ".";
+            messageColor = messageColor ? messageColor : "white";
+            messageFontSize = messageFontSize ? messageFontSize : "18px";
 
             var scrollScreen = document.getElementById("scrollScreen");
 
             if(imageSrc != null) {
                 var newImg = document.createElement("img");
                 newImg.src = imageSrc;
-                newImg.style.height = "50px";
-                newImg.style.width = "50px";
+                newImg.style.height = "150px";
+                newImg.style.width = "150px";
                 scrollScreen.appendChild(newImg);
             }
 
@@ -290,16 +291,6 @@
             scrollScreen.appendChild(newDiv);
         }
 
-        /*
-        function pay(cash, message) {
-            money += cash;
-            var moneyId = document.getElementById("moneyId");
-            moneyId.style.color = money > 0 ? "Green" : "Red";
-            dadOut(message, cash > 0 ? "Green" : "Red");
-            moneyId.innerText = "Money: $" + money;
-        }
-        */
-
         function clearSS() {
             var scrollScreen = document.getElementById("scrollScreen");            
             while (scrollScreen.hasChildNodes()) {
@@ -308,44 +299,31 @@
         }
 
         function lifeEvents() {
-            dadOut("-----", "magenta");
+            yearsOld++;
+            if(yearsOld >= 100) {
+                endTheGame();
+                return true;
+            }
             if(birthSchedule.includes(yearsOld)) {
                 numberOfKids++;
-                dadOut("Congratulation, you have had a baby!", "Magenta");
             }
-            dadOut("Happy " + yearsOld + " Birthday!", "magenta");
-            dadOut("-----", "magenta");
-            dadOut("-", "white");
-            dadOut("-", "white");
+            return false;
         }
 
-        function income() {
-            //pay(careerJobs[0].pay, "Your career as a " + careerJobs[0].title + " pays your yearly salary of $" + careerJobs[0].pay);
-
-            money += salary;
-
-
+        function revenues() {
             var snp500ShareIncrease = getRandomInt(-0.02, 0.10);
-            snp500SharePrice = snp500SharePrice * (1 + snp500ShareIncrease);
-            dadOut("[S&P 500 Index " + (snp500ShareIncrease * 100) + "% Increase] New Share Price = $" + snp500SharePrice, "Green");
+            snp500SharePrice = Math.ceil(snp500SharePrice * (1 + snp500ShareIncrease));
 
             var nyseShareIncrease = getRandomInt(-0.05, 0.15);
-            nyseSharePrice = nyseSharePrice * (1 + nyseShareIncrease);
-            dadOut("[New York Stock Exchange Index " + (nyseShareIncrease * 100) + "% Increase] New Share Price = $" + nyseSharePrice, "Green");
+            nyseSharePrice = Math.ceil(nyseSharePrice * (1 + nyseShareIncrease));
 
-            dadOut("-----", "Green");
-            dadOut("-");
-            dadOut("-");
-
-            document.getElementById("moneyId").style.color = money > 0 ? "Green" : "Red";
-            document.getElementById("moneyId").innerText = "Money: $" + money;
-            revenue = careerJobs[0].pay;
+            revenue = Math.ceil(careerJobs[0].pay);
         }
 
         function expenses() {
             childExpense = YEARLY_COST_PER_KID * numberOfKids;
             collegeExpense = YEARLY_COST_OF_COLLEGE;
-            interest = money < 0 ? money * LOAN_INTEREST : 0;
+            interest = Math.ceil(money < 0 ? money * LOAN_INTEREST : 0);
             expense = childExpense + collegeExpense + interest;
         }
 
@@ -356,16 +334,14 @@
             document.getElementById("careerImage").src = careerJobs[0].imgSrcUrl;
             document.getElementById("careerPay").innerText = "$" + careerJobs[0].pay;
             document.getElementById("careerJobTitle").innerText = careerJobs[0].title;
-            
-            dadOut("-");
-            dadOut("-");
-            dadOut("-----", "cyan");
+
+            dadOut("----- PROMOTION -----", "cyan");
             dadOut("Congratulations! You have been promoted to [" + careerJobs[0].title + "]", "cyan", careerJobs[0].imgSrcUrl);
             dadOut("Your new salary is $" + careerJobs[0].pay + " Per Year", "cyan");
             if(0 < careerJobs[0].bonusMax) {
                 dadOut("Your bonus can be between $" + careerJobs[0].bonusMin + " and $" + careerJobs[0].bonusMax + " Per Year", "cyan");
             }
-            dadOut("-----", "cyan");
+            dadOut(".", "white");
             if (careerJobs.length > 1) {
                 careerJobs.shift();
             }
@@ -375,7 +351,6 @@
             dadOut("----- LIFE EVENTS -----", "magenta");
             dadOut("• Happy " + yearsOld + " Birthday!", "magenta");
             if(birthSchedule.includes(yearsOld)) {
-                numberOfKids++;
                 dadOut("• Congratulation, you have had a baby!", "Magenta");
             }
 
@@ -397,35 +372,37 @@
             dadOut("• Taxes............[$" + taxes + "]", "Red");
 
             dadOut(".", "white");
+            dadOut(".", "white");
 
-            dadOut("----------", (revenue + expense) > 0 ? "Green" : "Red");
-            dadOut("• NET INCOME [$" + (revenue + expense) + "]", (revenue + expense) > 0 ? "Green" : "Red", null, "26px");
-
-        }
-
-        function calculateLoan() {
-            
+            var netLabel = (revenue + expense) < 0 ? "NET LOSS" : "NET INCOME";
+            dadOut("• " + netLabel + " [$" + (revenue + expense) + "]", (revenue + expense) > 0 ? "Green" : "Red", null, "26px");
             if(money < 0) {
                 dadOut("• TOTAL LOAN [$" + money + "] @ " + (LOAN_INTEREST * 100) + "% INTEREST", "Red", null, "26px");
             }
         }
 
+        function updateElements() {
+            document.getElementById("moneyId").style.color = money > 0 ? "Green" : "Red";
+            document.getElementById("moneyId").innerText = "Money: $" + money;
+
+            document.getElementById("houseValueId").innerText = "$" + houseValue;
+            document.getElementById("snp500Stocks").innerText = "$" + (snp500Shares * snp500SharePrice);
+            document.getElementById("nyseStocks").innerText = "$" + (nyseShares * nyseSharePrice);
+        }
+
         function careerClick() {
             clearSS();
-            lifeEvents();
-            income();
-            yearsOld++;
-            if(yearsOld >= 100) {
-                endTheGame();
+            if(lifeEvents()) {
                 return;
             }
+            revenues();
             expenses();
             if(yearsOld >= ageForPromotion) {
                 promote();
             }
             printFinancials();
             money += revenue + expense;
-            calculateLoan();
+            updateElements();
         }
 
         function rachelClick() {
@@ -451,11 +428,6 @@
             document.getElementById("jobTable").style.display = "none";
             dadOut("You Win!", "Magenta", null, "80px");
         }
-
-        //function randomPayDay() {
-        //    pay(50000, "$50000 randomly appears in your bank account.");
-        //}
-        //setInterval(randomPayDay, RANDOM_PAY_DAY_INTERVAL);
     </script>
 </head>
 <body>
@@ -534,21 +506,22 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="padding: 5px;">Houses</td>
-                                        <td style="padding: 5px; text-align: left;"><div id="housesId">0</div></td>
-                                        <td style="padding: 5px; text-align: left;"><input type="button" id="moreHouses" value="Buy" onclick="buyHouse()"/></td>
+                                        <td style="padding: 5px;">House</td>
+                                        <td style="padding: 5px; text-align: left;"><div id="houseValueId">0</div></td>
+                                        <td style="padding: 5px; text-align: left;"><input type="button" id="houseButton" value="Buy" onclick="buyHouse()"/></td>
                                     </tr>
                                     <tr>
-                                        <td style="padding: 5px;">Cars</td>
-                                        <td style="padding: 5px;"><div id="carsId">0</div></td>
-                                        <td style="padding: 5px;"><input type="button" id="moreCars" value="Buy" onclick="buyCar()" /></td>
+                                        <td style="padding: 5px;">S&P 500 Stocks</td>
+                                        <td style="padding: 5px; text-align: left;"><div id="snp500Stocks">0</div></td>
+                                        <td style="padding: 5px; text-align: left;"><input type="button" id="snp500Button" value="Buy" onclick="buySnp500()" /></td>
                                     </tr>
                                     <tr>
-                                        <td style="padding: 5px;">Boats</td>
-                                        <td style="padding: 5px;"><div id="boatsId">0</div></td>
-                                        <td style="padding: 5px;"><input type="button" id="moreBoats" value="Buy" onclick="buyBoat()" /></td>
+                                        <td style="padding: 5px;">NYSE Stock</td>
+                                        <td style="padding: 5px; text-align: left;"><div id="nyseStocks">0</div></td>
+                                        <td style="padding: 5px; text-align: left;"><input type="button" id="nyseButton" value="Buy" onclick="buyNyse()" /></td>
                                     </tr>
                                 </table>
+                                <!--
                                 <br/>
                                 <table id="investments" style="border: 1px solid white; width: 375px;">
                                     <tr>
@@ -566,7 +539,6 @@
                                         <td style="padding: 5px; text-align: left;"><div id="nyseStocks">0</div></td>
                                         <td style="padding: 5px; text-align: left;"><input type="button" value="Buy" onclick="buyNyseStocks()" /></td>
                                     </tr>
-                                    <!--
                                     <tr>
                                         <td style="padding: 5px;">Bonds</td>
                                         <td style="padding: 5px;"><div id="bonds">0</div></td>
@@ -605,8 +577,8 @@
                                         <td style="padding: 5px;">Hedge Fund</td>
                                         <td style="padding: 5px;">N/A</td>
                                     </tr>
-                                    -->
                                 </table>
+                                -->
                                 <br />
                                 <table id="liabilities" style="border: 1px solid white; width: 375px;">
                                     <tr>
