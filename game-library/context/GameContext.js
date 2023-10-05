@@ -1,9 +1,11 @@
 import { GameValidationException } from "../exception/GameValidationException.js";
 import { GameDeveloperException } from "../exception/GameDeveloperException.js";
 import { Log } from "../logger/Log.js";
-import { CanvasContextDecorator } from "../context/CanvasContextDecorator.js";
+import { CanvasContextDecorator } from "../decorator/CanvasContextDecorator.js";
+import { CanvasDecorator } from "../decorator/CanvasDecorator.js";
 import { MouseListener } from "../listener/MouseListener.js";
 import { KeyboardListener } from "../listener/KeyboardListener.js";
+import { Constants } from "../configuration/Constants.js";
 
 /**
  * The context for the game in reference to Inversion of Control, Shared Map Key/Values and Singleton
@@ -11,37 +13,23 @@ import { KeyboardListener } from "../listener/KeyboardListener.js";
  */
 export class GameContext {
     constructor(canvas, canvasContext) {
-        if (!GameContext.instance) {
-            GameContext.instance = this;
+        if (GameContext.instance) {
+            throw new GameDeveloperException("[FATAL] Developer Error. GameContext is an enforced SINGLETON so new can only be used once.");
         }
-
-        GameContext.COLOR_GREEN = "green";
-        GameContext.COLOR_RED = "red";
-        GameContext.COLOR_BLUE = "blue";
-        GameContext.COLOR_ORANGE = "orange";
-        GameContext.COLOR_PURPLE = "purple";
+        GameContext.instance = this;
 
         this.map = new Map();
 
         GameContext.set("Log", new Log("debug" == document.title ? true : false));
         Log.info("Starting GameContext", this);
 
-        GameContext.set("canvas", canvas);
-        GameContext.set("ctx", canvasContext);
-        GameContext.set("canvasContext", canvasContext);
-        GameContext.set("width", canvas.width);
-        GameContext.set("height", canvas.height);
-
-        const bounds = canvas.getBoundingClientRect();
-        GameContext.set("bounds", bounds);
+        GameContext.setClass(new Constants());
 
         GameContext.setClass(new CanvasContextDecorator(canvasContext));
+        GameContext.setClass(new CanvasDecorator(canvas));
+
         GameContext.setClass(new MouseListener());
         GameContext.setClass(new KeyboardListener());
-
-        if (canvas.width != bounds.width || canvas.height != bounds.height) {
-            throw new GameDeveloperException("Browser auto-resizing to a different resolution is not yet supported!");
-        }
 
         return GameContext.instance;
     }
@@ -151,23 +139,13 @@ export class GameContext {
     }
 
     /** Gets the canvas context from the GamaeContext cache Map. */
-    static getCtx() {
-        return GameContext.get("ctx");
+    static getCanvasContextDecorator() {
+        return GameContext.get("CanvasContextDecorator");
     }
 
     /** Gets the canvas from the GamaeContext cache Map. */
-    static getCanvas() {
-        return GameContext.get("canvas");
-    }
-
-    /** Gets the canvas width from the GamaeContext cache Map. */
-    static getWidth() {
-        return GameContext.get("width");
-    }
-
-    /** Gets the canvas height from the GamaeContext cache Map. */
-    static getHeight() {
-        return GameContext.get("height");
+    static getCanvasDecorator() {
+        return GameContext.get("CanvasDecorator");
     }
 
     /** Add class subscriber to send message to onClick method on click. */
