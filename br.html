@@ -1,0 +1,22 @@
+<head>
+    <script>
+
+        function flip() {
+            if (Math.random() > 0.5) {
+                document.getElementById("coin").src = "b/tails.jpg";
+                document.getElementById("side").textContent = "tails";
+            } else {
+                document.getElementById("coin").src = "b/heads.jpg";
+                document.getElementById("side").textContent = "heads";
+            }
+        }
+    </script>
+</head>
+
+<body style="text-align: center;font-size: 60px;">
+    <img id="coin" src="b/heads.jpg" style="height: 200px; width: 200px;" />
+    <br> <br>
+    <div id="side">heads</div>
+    <br> <br>
+    <input type="button" value="FLIP" style="font-size: 80px;" onclick="flip()" />
+</body>

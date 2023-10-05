@@ -1,0 +1,630 @@
+<head>
+    <style>
+        body {
+            background-color: black;
+            font-family: Helvetica, sans-serif;
+            color: white;
+            font-size: 22px;
+        }
+
+        .wrapper {
+            margin: auto;
+            width: 1800px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 1800px;
+        }
+
+        .outsideColumnWidth {
+            vertical-align: top;
+            width:400px;
+        }
+
+        .leftColumnWidth {
+            vertical-align: top;
+            width: 375px;
+            padding-right: 25px;
+        }
+
+        .middleColumnWidth {
+            border: 1px solid white;
+            font-size: 16px;
+            font-family: Verdana, sans-serif;
+            width: 950px;
+            display: block;
+            height: 800px;
+            overflow: auto;
+        }
+
+        .row {
+            margin: auto;
+            width: 100%;
+        }
+    
+        .leftcolumn {
+            float: left;
+            width: 25%;
+        }
+    
+        .centerColumn {
+            float: left;
+            width: 50%;
+        }
+    
+        .rightcolumn {
+            float: left;
+            width: 25%;
+        }
+    </style>
+    <script>
+        const YEARLY_COST_PER_KID = -16005; // Government estimation plus inflation
+        const YEARLY_COST_OF_COLLEGE = -28166 // In-State GA Tech
+
+        const MAX_NUMBER_OF_LINES = 40;
+
+        const LOAN_INTEREST = 0.10;
+
+        // Assets
+        var money = 30000;
+        var snp500Shares = 0;
+        var nyseShares = 0;
+
+        // Liabilities
+        var loan = 0;
+
+        // Revenue
+        var revenue = 0;
+        var salary = 0;
+        var snp500Revenue = 0;
+        var nyseRevenue = 0;
+
+        // Expense
+        var expense = 0;
+        var childExpense = 0;
+        var collegeExpense = 0;
+        var snp500Expense = 0;
+        var nyseExpense = 0;
+        var interest = 0;
+        var taxes = 0;
+        
+
+        
+
+        var numberOfLines = 0;
+        var yearsOld = 18;
+        var ageForPromotion = 18;
+        var numberOfKids = 0;
+
+        var snp500Shares = 0;
+        var snp500SharePrice = 100;
+        var nyseShares = 0;
+        var nyseSharePrice = 100;
+
+        let birthSchedule = [ 25, 28, 31, 34, 37, 40 ];
+
+        class Job {
+            constructor(title, imgSrcUrl, pay, bonusMin, bonusMax, stockOptions, benefits, yearsUntilPromotion, clickAction, description) {
+                this.title = title;
+                this.imgSrcUrl = imgSrcUrl;
+                this.pay = pay;
+                this.bonusMin = bonusMin;
+                this.bonusMax = bonusMax;
+                this.stockOptions = stockOptions;
+                this.benefits = benefits;
+                this.yearsUntilPromotion = yearsUntilPromotion;
+                this.clickAction = clickAction;
+                this.description = description;
+            }
+        }
+
+        let careerJobs = [ new Job(null, null, 0, 0, 0, 0, 0, 1, null) ];
+
+        let backupCareerJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 1, "Start Career"),
+            new Job("Paper Boy", "dad/images/paperboy.jpg", 800, 0, 1, "Deliver"),
+            new Job("Milk Man", "dad/images/milkman.jpg", 1000, 2000, 1, "Deliver"),
+            new Job("Lifeguard", "dad/images/lifeguard.jpg", 1000, 2000, 1, "Save"),
+            new Job("Call Center Representative", "dad/images/callcenter.jpg", 1000, 2000, 1, "Answer"),
+            new Job("IT Help Desk", "dad/images/ithelpdesk.jpg", 1000, 2000, 1, "Fix"),
+            new Job("IT Help Desk Supervisor", "dad/images/ithelpdesksupervisor.jpg", 1000, 2000, 1, "Fix"),
+            new Job("IT Operations Administrator", "dad/images/itoperations.jpg", 1000, 2000, 1, "Operate"),
+            new Job("Sr. IT Operations Administrator", "dad/images/sritoperations.jpg", 1000, 2000, 1, "Fix"),
+            new Job("Software Engineer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Code"),
+            new Job("Sr. Software Engineer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Code"),
+            new Job("Lead Software Engineer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Lead"),
+            new Job("Software Engineering Manager", "dad/images/callcenter.jpg", 1000, 2000, 1, "Manage"),
+            new Job("Sr. Software Engineering Manager", "dad/images/callcenter.jpg", 1000, 2000, 1, "Manage"),
+            new Job("Software Engineering Director", "dad/images/callcenter.jpg", 1000, 2000, 1, "Direct"),
+            new Job("Sr. Software Engineering Director", "dad/images/callcenter.jpg", 1000, 2000, 1, "Direct"),
+            new Job("Executive Software Engineering Director", "dad/images/callcenter.jpg", 1000, 2000, 1, "Direct"),
+            new Job("Associate Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Sr. Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Executivev Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Chief Technology Officer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Chief Executive Officer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Owner Entrepreneur", "dad/images/callcenter.jpg", 1000, 2000, 1, "Spend"),
+            new Job("Owner Chief Executive Officer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Owner Executive Chairman of the Board", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Philanthropist", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("President of the United Stated", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("President of the World", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision")];
+
+        let itJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 1, "Start Job 2"),
+            new Job("Paper Boy", "dad/images/paperboy.jpg", 800, 0, 1, "Deliver"),
+            new Job("Milk Man", "dad/images/milkman.jpg", 1000, 2000, 1, "Deliver"),
+            new Job("Lifeguard", "dad/images/lifeguard.jpg", 1000, 2000, 1, "Save"),
+            new Job("Call Center Representative", "dad/images/callcenter.jpg", 1000, 2000, 1, "Answer"),
+            new Job("IT Help Desk", "dad/images/ithelpdesk.jpg", 1000, 2000, 1, "Fix"),
+            new Job("IT Help Desk Supervisor", "dad/images/ithelpdesksupervisor.jpg", 1000, 2000, 1, "Fix"),
+            new Job("IT Operations Administrator", "dad/images/itoperations.jpg", 1000, 2000, 1, "Operate"),
+            new Job("Sr. IT Operations Administrator", "dad/images/sritoperations.jpg", 1000, 2000, 1, "Fix"),
+            new Job("Software Engineer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Code"),
+            new Job("Sr. Software Engineer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Code"),
+            new Job("Lead Software Engineer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Lead"),
+            new Job("Software Engineering Manager", "dad/images/callcenter.jpg", 1000, 2000, 1, "Manage"),
+            new Job("Sr. Software Engineering Manager", "dad/images/callcenter.jpg", 1000, 2000, 1, "Manage"),
+            new Job("Software Engineering Director", "dad/images/callcenter.jpg", 1000, 2000, 1, "Direct"),
+            new Job("Sr. Software Engineering Director", "dad/images/callcenter.jpg", 1000, 2000, 1, "Direct"),
+            new Job("Executive Software Engineering Director", "dad/images/callcenter.jpg", 1000, 2000, 1, "Direct"),
+            new Job("Associate Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Sr. Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Executivev Vice President", "dad/images/callcenter.jpg", 1000, 2000, 1, "Budget"),
+            new Job("Chief Technology Officer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Chief Executive Officer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Owner Entrepreneur", "dad/images/callcenter.jpg", 1000, 2000, 1, "Spend"),
+            new Job("Owner Chief Executive Officer", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Owner Executive Chairman of the Board", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("Philanthropist", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("President of the United Stated", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision"),
+            new Job("President of the World", "dad/images/callcenter.jpg", 1000, 2000, 1, "Vision")];
+
+        let rachelCareerJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 1, "Start Career"),
+            new Job("Taxi Driver", "dad/images/taxidriver.jpg", 2900, 0, 1, "Drive"),
+            new Job("Roofer", "dad/images/roofer.jpg", 2900, 0, 1, "Tile"),
+            new Job("Logger", "dad/images/logger.jpg", 800, 0, 1, "Cut"),
+            new Job("Dog Trainer", "dad/images/dogtrainer.jpg", 800, 0, 1, "Train"),
+            new Job("Police Officer", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("Ice Cream Man", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, ""),
+            new Job("", "dad/images/.jpg", 800, 0, 1, "")];
+
+        let walmartCareerJobs = [
+            new Job("Dad", "dad/images/questionmark.jpg", 0, 0, 1, "Start Career"),
+            new Job("Walmart Bag Boy", "dad/images/bag.jpeg", 1900, 0, 1, "Bag"),
+            new Job("Walmart Cart Boy", "dad/images/cart.jpg", 2100, 0, 1, "Cart"),
+            new Job("Walmart Cashier", "dad/images/cashier.jpg", 2200, 0, 1, "Checkout"),
+            new Job("Walmart Floor Associate", "dad/images/associate.jpg", 2200, 0, 1, "Assist"),
+            new Job("Walmart Stocker", "dad/images/stocker.jpg", 2300, 0, 1, "Stock"),
+            new Job("Walmart Janitor", "dad/images/janitor.jpg", 2400, 0, 1, "Clean"),
+            new Job("Walmart Security Specialist", "dad/images/security.jpg", 2500, 0, 1, "Watch"),
+            new Job("Walmart Cashier Supervisor", "dad/images/cashiersupervisor.jpg", 2900, 0, 1, "Supervise"),
+            new Job("Walmart Associate Supervisor", "dad/images/supervisor.png", 2900, 0, 1, "Supervise"),
+            new Job("Walmart Department Assistant Manager", "dad/images/assistantmanager.jpg", 4000, 0, 1, "Manage"),
+            new Job("Walmart Department Manager", "dad/images/associate.jpg", 4500, 0, 1, "Manage"),
+            new Job("Walmart District Manager", "dad/images/associate.jpg", 11500, 0, 1, "Manage"),
+            new Job("Walmart Store Assistant Manager", "dad/images/associate.jpg", 14000, 0, 1, "Manage"),
+            new Job("Walmart Store Manager", "dad/images/associate.jpg", 16500, 0, 1, "Manage"),
+            new Job("Walmart Associatee Vice President", "dad/images/associate.jpg", 25000, 0, 1, "Direct"), // 300
+            new Job("Walmart Vice President", "dad/images/associate.jpg", 33000, 0, 1, "Direct"), //400
+            new Job("Walmart Sr Vice President", "dad/images/associate.jpg", 42000, 0, 1, "Direct"), //500
+            new Job("Walmart Chief Operating OFficer", "dad/images/associate.jpg", 258000, 0, 1, "Think"),
+            new Job("Walmart Chief Executive OFficer", "dad/images/associate.jpg", 2000000, 0, 1, "Present"),
+            new Job("Owner Entrepreneur", "dad/images/callcenter.jpg", 1000000, 0, 1, "Present"),
+            new Job("Owner Chief Executive Officer", "dad/images/callcenter.jpg", 500000000, 0, 1, "Present"),
+            new Job("Owner Executive Chairman of the Board", "dad/images/callcenter.jpg", 5000000000, 0, 1, "Present"),
+            new Job("Philanthropist", "dad/images/callcenter.jpg", -500000000, 2000, 1, "Give Away"),
+            new Job("President of the United States", "dad/images/callcenter.jpg", 33333, 0, 1, "Change"),
+            new Job("President of the World", "dad/images/callcenter.jpg", 666666, 0, 1, "Change"),
+            new Job("President of the World & Mars", "dad/images/associate.jpg", 666666, 0, 1, "Change")];
+
+        let catResearcherJobs = [
+            //new Job("Student", "dad/images/questionmark.jpg", 10000, 0, 0, 0, 0, 1, "Start College"),
+            //new Job("Elementary School Cat Owner", "dad/images/catowner.jpg", 0, 0, 0, 0, 0, 5, "Volunteer", "The first step to starting a career working with cats is to get your own!"),
+            //new Job("Middle School Kitten Foster", "dad/images/catfoster.jpg", 0, 0, 0, 0, 0, 3, "Volunteer", "Fostering is a volunteering opportunity when a family takes a cat into their home for a short time before adopting out to a permanent owner."),
+            //new Job("High School Cat Charity Volunteer", "dad/images/hsvolunteer.jpg", 0, 0, 0, 0, 0, 4, "Volunteer", "Starting in high school once reaching the appropriate age for legal protection, local cat rescue organizations allow volunteers to help take care of the cats by doing things like feeding, watering, cleaning litterboxes, grooming and others.  Colleges love to see charity work on their applications!"),
+            //new Job("Undergraduate Cat Charity Volunteer", "dad/images/undergradcat.jpg", 0, 0, 0, 0, 0, 4, "Volunteer"),
+            new Job("Cat Researcher Intern", "dad/images/catintern.jpg", 5000, 0, 0, 0, 0, 4, "Assist", "Although most internships are unpaid, your industry leading skills that you have learned at the University of Georgia have earned you an internship that will pay $15,000 this year."),
+            new Job("Graduate Cat Researcher", "dad/images/catgrad.jpg", 15000, 0, 0, 0, 0, 3, "Assist", "As a teacher's assistant in cat research, the University of Georgia provides you a small salary and pays your tuition."),
+            new Job("Associate Cat Researcher", "dad/images/assocresearcher.jpg", 30000, 0, 0, 0, 0, 3, "Research"),
+            new Job("Cat Researcher", "dad/images/researcher.jpg", 45000, 0, 0, 0, 0, 3, "Research"),
+            new Job("Sr. Cat Researcher", "dad/images/srresearcher.jpg", 60000, 0, 0, 0, 0, 3, "Research"),
+            new Job("Adjunct Professor of Cat Research", "dad/images/adjunct.jpg", 60000, 0, 0, 0, 0, 1, "Teach"),
+            new Job("Assistant Professor of Cat Research", "dad/images/assoc.jpg", 100000, 0, 0, 0, 0, 5, "Teach"),
+            new Job("Professor of Cat Research", "dad/images/professor.jpg", 150000, 0, 0, 0, 0, 5, "Teach"),
+            new Job("Tenured Professor of Cat Research", "dad/images/srprofessor.jpg", 200000, 0, 0, 0, 0, 10, "Teach"),
+            new Job("Professorial Fellow of Cat Research", "dad/images/fellow.jpg", 300000, 0, 0, 0, 0, 10, "Teach"),
+            new Job("Cat Research Department Chair", "dad/images/chair.jpg", 300000, 0, 0, 0, 0, 5, "Sit"),
+            new Job("Dean of Cat Research", "dad/images/dean.jpg", 500000, 0, 0, 0, 0, 10, "Oversee"),
+            new Job("Purrrrrresident of Cat Research", "dad/images/president.jpg", 1000000, 0, 0, 0, 0, 100, "Preside")];
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        function loadMoneyId() {
+            money += 1;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.innerText = "Money: $" + money;
+        }
+
+        function dadOut(message, messageColor, imageSrc, messageFontSize) {
+            message = message ? message : " ";
+            messageColor = message ? messageColor : "white";
+            messageFontSize = messageFontSize ? messageFontSize : "20px";
+
+            var scrollScreen = document.getElementById("scrollScreen");
+
+            if(imageSrc != null) {
+                var newImg = document.createElement("img");
+                newImg.src = imageSrc;
+                newImg.style.height = "50px";
+                newImg.style.width = "50px";
+                scrollScreen.appendChild(newImg);
+            }
+
+            var newDiv = document.createElement("div");
+
+            newDiv.style.backgroundColor = "black";
+            newDiv.style.color = messageColor;
+            newDiv.style.fontSize = messageFontSize;
+            newDiv.style.width = "950px";
+
+            var newText = document.createTextNode(message);
+            newDiv.appendChild(newText);
+
+            console.log("Write:  " + message);
+            scrollScreen.appendChild(newDiv);
+        }
+
+        /*
+        function pay(cash, message) {
+            money += cash;
+            var moneyId = document.getElementById("moneyId");
+            moneyId.style.color = money > 0 ? "Green" : "Red";
+            dadOut(message, cash > 0 ? "Green" : "Red");
+            moneyId.innerText = "Money: $" + money;
+        }
+        */
+
+        function clearSS() {
+            var scrollScreen = document.getElementById("scrollScreen");            
+            while (scrollScreen.hasChildNodes()) {
+                scrollScreen.firstChild.remove();
+            }
+        }
+
+        function lifeEvents() {
+            dadOut("-----", "magenta");
+            if(birthSchedule.includes(yearsOld)) {
+                numberOfKids++;
+                dadOut("Congratulation, you have had a baby!", "Magenta");
+            }
+            dadOut("Happy " + yearsOld + " Birthday!", "magenta");
+            dadOut("-----", "magenta");
+            dadOut("-", "white");
+            dadOut("-", "white");
+        }
+
+        function income() {
+            //pay(careerJobs[0].pay, "Your career as a " + careerJobs[0].title + " pays your yearly salary of $" + careerJobs[0].pay);
+
+            money += salary;
+
+
+            var snp500ShareIncrease = getRandomInt(-0.02, 0.10);
+            snp500SharePrice = snp500SharePrice * (1 + snp500ShareIncrease);
+            dadOut("[S&P 500 Index " + (snp500ShareIncrease * 100) + "% Increase] New Share Price = $" + snp500SharePrice, "Green");
+
+            var nyseShareIncrease = getRandomInt(-0.05, 0.15);
+            nyseSharePrice = nyseSharePrice * (1 + nyseShareIncrease);
+            dadOut("[New York Stock Exchange Index " + (nyseShareIncrease * 100) + "% Increase] New Share Price = $" + nyseSharePrice, "Green");
+
+            dadOut("-----", "Green");
+            dadOut("-");
+            dadOut("-");
+
+            document.getElementById("moneyId").style.color = money > 0 ? "Green" : "Red";
+            document.getElementById("moneyId").innerText = "Money: $" + money;
+            revenue = careerJobs[0].pay;
+        }
+
+        function expenses() {
+            childExpense = YEARLY_COST_PER_KID * numberOfKids;
+            collegeExpense = YEARLY_COST_OF_COLLEGE;
+            interest = money < 0 ? money * LOAN_INTEREST : 0;
+            expense = childExpense + collegeExpense + interest;
+        }
+
+        function promote() {
+            ageForPromotion = yearsOld + careerJobs[0].yearsUntilPromotion;
+
+            document.getElementById("careerButton").value = careerJobs[0].clickAction;
+            document.getElementById("careerImage").src = careerJobs[0].imgSrcUrl;
+            document.getElementById("careerPay").innerText = "$" + careerJobs[0].pay;
+            document.getElementById("careerJobTitle").innerText = careerJobs[0].title;
+            
+            dadOut("-");
+            dadOut("-");
+            dadOut("-----", "cyan");
+            dadOut("Congratulations! You have been promoted to [" + careerJobs[0].title + "]", "cyan", careerJobs[0].imgSrcUrl);
+            dadOut("Your new salary is $" + careerJobs[0].pay + " Per Year", "cyan");
+            if(0 < careerJobs[0].bonusMax) {
+                dadOut("Your bonus can be between $" + careerJobs[0].bonusMin + " and $" + careerJobs[0].bonusMax + " Per Year", "cyan");
+            }
+            dadOut("-----", "cyan");
+            if (careerJobs.length > 1) {
+                careerJobs.shift();
+            }
+        }
+
+        function printFinancials() {
+            dadOut("----- LIFE EVENTS -----", "magenta");
+            dadOut("• Happy " + yearsOld + " Birthday!", "magenta");
+            if(birthSchedule.includes(yearsOld)) {
+                numberOfKids++;
+                dadOut("• Congratulation, you have had a baby!", "Magenta");
+            }
+
+            dadOut(".", "white");
+
+            dadOut("----- REVENUE [$" + revenue + "] -----", "Green");
+            dadOut("• Salary...........[$" + salary + "]", "Green");
+            dadOut("• S&P 500 Gains....[$" + snp500Revenue + "]", "Green");
+            dadOut("• NYSE Gains.......[$" + nyseRevenue + "]", "Green");
+
+            dadOut(".", "white");
+
+            dadOut("----- EXPENSE [$" + expense + "] -----", "Red");
+            dadOut("• Childcare........[$" + childExpense + "]", "Red");
+            dadOut("• College..........[$" + collegeExpense + "]", "Red");
+            dadOut("• S&P 500 Losses...[$" + snp500Expense + "]", "Red");
+            dadOut("• NYSE Losses......[$" + nyseExpense + "]", "Red");
+            dadOut("• Interest.........[$" + interest + "]", "Red");
+            dadOut("• Taxes............[$" + taxes + "]", "Red");
+
+            dadOut(".", "white");
+
+            dadOut("----------", (revenue + expense) > 0 ? "Green" : "Red");
+            dadOut("• NET INCOME [$" + (revenue + expense) + "]", (revenue + expense) > 0 ? "Green" : "Red", null, "26px");
+
+        }
+
+        function calculateLoan() {
+            
+            if(money < 0) {
+                dadOut("• TOTAL LOAN [$" + money + "] @ " + (LOAN_INTEREST * 100) + "% INTEREST", "Red", null, "26px");
+            }
+        }
+
+        function careerClick() {
+            clearSS();
+            lifeEvents();
+            income();
+            yearsOld++;
+            if(yearsOld >= 100) {
+                endTheGame();
+                return;
+            }
+            expenses();
+            if(yearsOld >= ageForPromotion) {
+                promote();
+            }
+            printFinancials();
+            money += revenue + expense;
+            calculateLoan();
+        }
+
+        function rachelClick() {
+            console.log("Rachel Button has been clicked!");
+            careerJobs = careerJobs.concat(catResearcherJobs);
+            careerJobs.shift();
+            document.getElementById("careerPath").style.display = "none";
+            document.getElementById("rachelButton").style.display = "none";
+            document.getElementById("careerPathTitle").style.display = "none";
+            document.getElementById("careerButton").style.display = "inline";
+            dadOut("-----", "Magenta");
+            dadOut("Rachel will be attending college to become a cat researcher.", "Magenta", null, "28px");
+            dadOut("-----", "Magenta");
+            dadOut("-");
+            dadOut("-");
+            dadOut("-----", "Magenta");
+            dadOut("Rachel's parents give her $30,000 for college. Great!", "Magenta", null, "28px");
+            dadOut("-----", "Magenta");
+        }
+
+        function endTheGame() {
+            clearSS();
+            document.getElementById("jobTable").style.display = "none";
+            dadOut("You Win!", "Magenta", null, "80px");
+        }
+
+        //function randomPayDay() {
+        //    pay(50000, "$50000 randomly appears in your bank account.");
+        //}
+        //setInterval(randomPayDay, RANDOM_PAY_DAY_INTERVAL);
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <table>
+            <tr>
+                <td style="width: 400px; padding-right: 25px;"></td>
+                <td style="width: 950px;"></td>
+                <td style="width: 400px; padding-left: 25px;"></td>
+            </tr>
+            <tr>
+                <td style="align-content: left; text-align: left; color: magenta;">
+                    <div id="ageTimer">
+                        25 Years Old Dad With 7 Kids.
+                    </div> 
+                </td>
+                <td style="align-content: center; text-align: center; width: 950px;" > 
+                    <h1 style="font-size: 40px">
+                        Dad's World
+                    </h1>
+                </td>
+                <td style="align-content: right; text-align: right; color: magenta;">
+                    <div id="deathTimer">
+                        60 Years Remain.
+                    </div>   
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">    
+                    <table id="jobTable">
+                        <tr>
+                            <td style="padding-bottom: 30px;">
+                                <table id="career" style="border-collapse: separate; border: 1px solid white; width:373px;">
+                                    <tr>
+                                        <td style="text-align: center; width: 157px; padding-left: 10px; padding-right: 20px;" >
+                                            <div id="careerJobTitle" style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; height: 55px;">High School Graduate</div><br/>
+                                            <img id="careerImage" src="dad/images/questionmark.jpg" height="150" width="150"><br/>
+                                            <span style="font-size: 20px; color: red; font-family: Arial, Helvetica, sans-serif;">Career</span>
+                                        </td>
+                                        <td style="text-align: center; width: 146px; padding-right: 40px;" >
+                                            <input id="careerButton" type="button" value="Begin Career" onclick="careerClick()" style="padding: 10px 15px; font-size: 18px; background-color: white; width: 158px; display: none;"/><br/>
+                                            <div id="careerProgress" style="width: 158px; background-color: grey;">
+                                                <div id="careerBar" style="width: 1px; height: 10px; background-color: green;"></div>
+                                            </div>
+                                            <span id="careerPay" style="font-size: 20px; color: green;">$0 per month</span><br/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="middleColumn" class="middleColumnWidth">
+                    <div id="careerPath" style="float: left; width: 950px;">
+                        <div id="careerPathTitle" style="font-size: 26px; font-family: Verdana, sans-serif; width: 950px; text-align: center;">Career Path</div>
+                        <div id="rachelDiv" style="padding: 25px 50px; float: left;"><input type="button" id="rachelButton" value="Rachel" onclick="rachelClick()" style="padding: 25px 50px; font-size: 32px; background-color: white;" /></div>
+                    </div>
+                    <div id="scrollScreen"></div>
+                </td>
+                <td id="rightColumn" style="width: 375px; padding-left: 25px; vertical-align: top;"> 
+                    <table id="inventoryTable">
+                        <tr>
+                            <td style="vertical-align: top; text-align: left; width: 375px;">
+                                <table id="money" style="border: 1px solid white; width: 375px;">
+                                    <tr>
+                                        <td style="padding: 5px; font-size: 26px; color: green;">
+                                            <div id="moneyId">0</div><script type="text/javascript">loadMoneyId()</script>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br/>
+                                <table id="assets" style="border: 1px solid white; width: 375px;">
+                                    <tr>
+                                        <td colspan="3" style="font-size: 22px; font-family: Helvetica, sans-serif; color: green; text-align: center; width: 375px;">
+                                            Assets
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Houses</td>
+                                        <td style="padding: 5px; text-align: left;"><div id="housesId">0</div></td>
+                                        <td style="padding: 5px; text-align: left;"><input type="button" id="moreHouses" value="Buy" onclick="buyHouse()"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Cars</td>
+                                        <td style="padding: 5px;"><div id="carsId">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreCars" value="Buy" onclick="buyCar()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Boats</td>
+                                        <td style="padding: 5px;"><div id="boatsId">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreBoats" value="Buy" onclick="buyBoat()" /></td>
+                                    </tr>
+                                </table>
+                                <br/>
+                                <table id="investments" style="border: 1px solid white; width: 375px;">
+                                    <tr>
+                                        <td colspan="3" style="font-size: 22px; font-family: Helvetica, sans-serif; color: green; text-align: center; width: 375px;">
+                                            Investments
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">S&P 500 Stocks</td>
+                                        <td style="padding: 5px; text-align: left;"><div id="snp500Stocks">0</div></td>
+                                        <td style="padding: 5px; text-align: left;"><input type="button" value="Buy" onclick="buySnp500Stocks()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">NYSE Stocks</td>
+                                        <td style="padding: 5px; text-align: left;"><div id="nyseStocks">0</div></td>
+                                        <td style="padding: 5px; text-align: left;"><input type="button" value="Buy" onclick="buyNyseStocks()" /></td>
+                                    </tr>
+                                    <!--
+                                    <tr>
+                                        <td style="padding: 5px;">Bonds</td>
+                                        <td style="padding: 5px;"><div id="bonds">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreBonds" value="Buy" onclick="buyBonds()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Treasury Bills</td>
+                                        <td style="padding: 5px;"><div id="tbillsId">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreTbills" value="Buy" onclick="buyTbills()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">CDs</td>
+                                        <td style="padding: 5px;"><div id="cdId">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreCDs" value="Buy" onclick="buyCDs()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Annuities</td>
+                                        <td style="padding: 5px;"><div id="annuitiesId">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreAnnuities" value="Buy" onclick="buysAnnuities()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Options</td>
+                                        <td style="padding: 5px;"><div id="optionsId">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreOptions" value="Buy" onclick="moreOptions()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Rental Houses</td>
+                                        <td style="padding: 5px;"><div id="rentalHouses">0</div></td>
+                                        <td style="padding: 5px;"><input type="button" id="moreRentalHouses" value="Buy" onclick="buyRentalHouses()" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Commercial Real Estate</td>
+                                        <td style="padding: 5px;">N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Hedge Fund</td>
+                                        <td style="padding: 5px;">N/A</td>
+                                    </tr>
+                                    -->
+                                </table>
+                                <br />
+                                <table id="liabilities" style="border: 1px solid white; width: 375px;">
+                                    <tr>
+                                        <td colspan="3" style="font-size: 22px; font-family: Helvetica, sans-serif; color: red; text-align: center; width: 375px;">
+                                            Liabilities
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px; text-align: left;">Loan</td>
+                                        <td style="padding: 5px; text-align: left;"><div id="loan">$0</div></td>
+                                        <td style="padding: 5px; text-align: left;"><div id="loanInterest">10%</div></td>
+                                    </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
