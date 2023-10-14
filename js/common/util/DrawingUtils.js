@@ -110,7 +110,7 @@ export function drawFilledRectangle(color, x, y, w, h) {
  * @example drawCircle(5, "red", 100, 75, 50, 0, 2);
  */
 export function drawCircle(size, color, x, y, r, s, e) {
-    CanvasContextDecorator.drawCircle(color, x, y, r, s, e);
+    CanvasContextDecorator.drawCircle(size, color, x, y, r, s, e);
 }
 
 /**
