@@ -9,4 +9,8 @@ export class GameChoice {
     draw() {
 
     }
+
+    onClick(x, y) {
+
+    }
 }
