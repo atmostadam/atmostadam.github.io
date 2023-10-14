@@ -6,7 +6,6 @@ import { CanvasDecorator } from "../decorator/CanvasDecorator.js";
 import { MouseListener } from "../listener/MouseListener.js";
 import { KeyboardListener } from "../listener/KeyboardListener.js";
 import { Constants } from "../configuration/Constants.js";
-import { GameChoice } from "./../../GameChoice.js";
 
 /**
  * The context for the game in reference to Inversion of Control, Shared Map Key/Values and Singleton
@@ -31,11 +30,6 @@ export class GameContext {
 
         GameContext.setClass(new MouseListener());
         GameContext.setClass(new KeyboardListener());
-
-        const gameChoice = new GameChoice(canvas, canvasContext);
-        GameContext.set("GameLoop", gameChoice);
-        GameContext.set("GameChoice", gameChoice);
-        GameContext.addClickSubscriber(gameChoice);
 
         return GameContext.instance;
     }
