@@ -137,3 +137,7 @@ export function drawFilledCircle(color, x, y, r, s, e) {
 export function drawBackground(image) {
     CanvasContextDecorator.drawBackground(image);
 }
+
+export function drawBackgroundById(id) {
+    CanvasContextDecorator.drawBackgroundById(id);
+}

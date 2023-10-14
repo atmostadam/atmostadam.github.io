@@ -1,6 +1,7 @@
 import { GameContext } from "../context/GameContext.js";
 import { GameValidationException } from "../exception/GameValidationException.js";
 import { GameDeveloperException } from "../exception/GameDeveloperException.js";
+import { CanvasDecorator } from "./CanvasDecorator.js";
 
 export class CanvasContextDecorator {
     constructor(canvasContext) {
@@ -173,12 +174,16 @@ export class CanvasContextDecorator {
             image,
             0,
             0,
-            GameContext.getWidth(),
-            GameContext.getHeight(),
+            CanvasDecorator.getWidth(),
+            CanvasDecorator.getHeight(),
             0,
             0,
-            GameContext.getWidth(),
-            GameContext.getHeight());
+            CanvasDecorator.getWidth(),
+            CanvasDecorator.getHeight());
+    }
+
+    static drawBackgroundById(id) {
+        CanvasContextDecorator.drawBackground(CanvasContextDecorator.getImage(id));
     }
 
     /**
@@ -188,7 +193,7 @@ export class CanvasContextDecorator {
      */
     static drawFilledBackground(color) {
         CanvasContextDecorator.getCanvasContext().fillStyle = color;
-        CanvasContextDecorator.getCanvasContext().fillRect(0, 0, GameContext.getWidth(), GameContext.getHeight());
+        CanvasContextDecorator.getCanvasContext().fillRect(0, 0, CanvasDecorator.getWidth(), CanvasDecorator.getHeight());
     }
 
     /**
