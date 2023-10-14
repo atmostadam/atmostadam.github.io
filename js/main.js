@@ -1,4 +1,5 @@
 import { GameContext } from "./common/context/GameContext.js";
+import { GameChoice } from "./GameChoice.js";
 
 window.addEventListener("load", function () {
     var lastTime = performance.now();
@@ -6,6 +7,7 @@ window.addEventListener("load", function () {
     const canvas = document.getElementById("game-canvas");
     const canvasContext = canvas.getContext("2d");
     new GameContext(canvas, canvasContext);
+    new GameChoice(canvas, canvasContext);
     var tick = 0;
 
     function animate() {
